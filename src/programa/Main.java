@@ -207,6 +207,7 @@ public class Main {
         System.out.println("Número: " + producto.getNumero());
         System.out.println("Nombre: " + producto.getNombre());
         System.out.println("Fecha de Caducidad: " + producto.getFechaCaducidad().getDia() + "/" + producto.getFechaCaducidad().getMes() + "/" + producto.getFechaCaducidad().getYear());
+
 	}
 	public static void crearLocal() 
 	{
