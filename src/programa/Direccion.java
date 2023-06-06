@@ -21,6 +21,10 @@ public class Direccion {
 	public void seteCalle1(String eCalle1) {this.eCalle1 = eCalle1;}
 	public String geteCalle2() {return eCalle2;}
 	public void seteCalle2(String eCalle2) {this.eCalle2 = eCalle2;}
+	public String getCiudad() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 
 }
