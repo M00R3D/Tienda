@@ -25,7 +25,7 @@ import javax.swing.JFrame;
 public class Ventana {
 
 	private JFrame frame;
-
+	private Main main;
 	/**
 	 * Launch the application.
 	 */
@@ -130,10 +130,23 @@ public class Ventana {
 		JButton persona = new JButton("Crear persona");
 		persona.setBounds(189, 238, 163, 34);
 		Inicio.add(persona);
+		persona.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				main.crearPersona();
+			}});
+		
+		
 		//// ELIMINAR PERSONA
 		JButton eliminar = new JButton("Elimniiar Persona");
 		eliminar.setBounds(362, 238, 165, 34);
 		Inicio.add(eliminar);
+		eliminar.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+			}});
 		
 		/////CREAR AL PROVEDOR
 		JButton provedor = new JButton("Crear provedor");
