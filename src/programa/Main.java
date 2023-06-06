@@ -192,27 +192,21 @@ public class Main {
         // Pedir los datos del producto al usuario
         System.out.println("Ingrese el código del producto: ");
         double codigo = scanner.nextDouble();
-
         System.out.println("Ingrese el número del producto: ");
         double numero = scanner.nextDouble();
-
         System.out.println("Ingrese el nombre del producto: ");
         scanner.nextLine(); // Limpiar el buffer antes de leer la línea
         String nombre = scanner.nextLine();
-
         // Crear un objeto de la clase Fecha
         Fecha fechaCaducidad = crearFecha(scanner);
-
         // Crear un objeto de la clase Producto
         Producto producto = new Producto(codigo, numero, nombre, fechaCaducidad);
-
         // Imprimir los datos del producto creado
         System.out.println("\nDatos del producto:");
         System.out.println("Código: " + producto.getCodigo());
         System.out.println("Número: " + producto.getNumero());
         System.out.println("Nombre: " + producto.getNombre());
         System.out.println("Fecha de Caducidad: " + producto.getFechaCaducidad().getDia() + "/" + producto.getFechaCaducidad().getMes() + "/" + producto.getFechaCaducidad().getYear());
-
 	}
 	public static void crearLocal() 
 	{
