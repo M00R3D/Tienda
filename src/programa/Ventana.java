@@ -53,6 +53,7 @@ public class Ventana {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		//Creamos un panel para establecer con visuales los botones que ejecuta la consola
 		frame = new JFrame();
 		frame.setBounds(100, 100, 967, 622);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -64,7 +65,7 @@ public class Ventana {
 		frame.getContentPane().add(Inicio);
 		Inicio.setLayout(null);
 		
-		
+		//nombre del local
 		JLabel tag1 = new JLabel("Super Mercado De Broklin");
 		tag1.setBackground(Color.BLACK);
 		tag1.setHorizontalAlignment(SwingConstants.CENTER);
@@ -74,7 +75,7 @@ public class Ventana {
 		tag1.setLocation(282, 11);
 		Inicio.add(tag1);
 		
-		
+		//Direccion del local
 		JLabel tag2 = new JLabel("Direccion : pico de orizaba y santa alicia ");
 		tag2.setSize(443, 36);
 		tag2.setBackground(Color.BLACK);
@@ -85,7 +86,7 @@ public class Ventana {
 		tag2.setLocation(214, 65);
 		Inicio.add(tag2);
 		
-		
+		//Numero de nuestro local
 		JLabel tag3 = new JLabel("numero de telefono : 61235887443");
 		tag3.setBackground(Color.BLACK);
 		tag3.setHorizontalAlignment(SwingConstants.CENTER);
@@ -95,7 +96,7 @@ public class Ventana {
 		tag3.setLocation(225, 112);
 		Inicio.add(tag3);
 		
-		
+		//Codigo postal de nuestro local
 		JLabel tag4 = new JLabel("Codigo Postal: 23080");
 		tag4.setBackground(Color.BLACK);
 		tag4.setHorizontalAlignment(SwingConstants.CENTER);
@@ -104,7 +105,7 @@ public class Ventana {
 		tag4.setForeground(Color.RED);
 		tag4.setLocation(282, 157);
 		Inicio.add(tag4);
-		
+		//logo de nuestro local 
 		ImageIcon img1 = new ImageIcon("Logo.jpg");
 		JLabel im1 = new JLabel(img1);
 		im1.setHorizontalAlignment(SwingConstants.LEFT);
@@ -134,12 +135,12 @@ public class Ventana {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				main.crearPersona();
+				Main.crearPersona();
 			}});
 		
 		
 		//// ELIMINAR PERSONA
-		JButton eliminar = new JButton("Elimniiar Persona");
+		JButton eliminar = new JButton("Elimnar Persona");
 		eliminar.setBounds(362, 238, 165, 34);
 		Inicio.add(eliminar);
 		eliminar.addActionListener(new ActionListener() {
