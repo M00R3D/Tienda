@@ -338,8 +338,42 @@ public class Ventana {
 		Icon ices14 = new ImageIcon(esc14);
 		im14.setIcon(ices14);
 		Crearpedido.add(im14);
-
 		
+		ImageIcon img15 = new ImageIcon("3.png");
+		JButton im15 = new JButton(img15);
+		im15.setSize(46, 42);
+		im15.setLocation(50, 340);
+
+		Image esc15 = img15.getImage().getScaledInstance(im15.getWidth(), im15.getHeight(), Image.SCALE_SMOOTH);
+		Icon ices15 = new ImageIcon(esc15);
+		im15.setIcon(ices15);
+		Crearpedido.add(im15);
+
+			/////////////// Texto de cada boton
+		JLabel agregar = new JLabel("Agregar algo al carrito");
+		agregar.setHorizontalAlignment(SwingConstants.CENTER);
+		agregar.setSize(276, 53);
+		agregar.setFont(new Font("Arial", Font.BOLD, 20));
+		agregar.setForeground(Color.decode("#000000"));
+		agregar.setLocation(80, 210);
+		Crearpedido.add(agregar);
+		
+
+		JLabel eliminar = new JLabel("Eliminar");
+		eliminar.setHorizontalAlignment(SwingConstants.CENTER);
+		eliminar.setSize(276, 53);
+		eliminar.setFont(new Font("Arial", Font.BOLD, 20));
+		eliminar.setForeground(Color.decode("#000000"));
+		eliminar.setLocation(10, 275);
+		Crearpedido.add(eliminar);
+		
+		JLabel historial = new JLabel("Historial");
+		historial.setHorizontalAlignment(SwingConstants.CENTER);
+		historial.setSize(276, 53);
+		historial.setFont(new Font("Arial", Font.BOLD, 20));
+		historial.setForeground(Color.decode("#000000"));
+		historial.setLocation(10, 330);
+		Crearpedido.add(historial);
 
 //		JPanel Crearprovedor = new JPanel();
 //		Crearprovedor.setBackground(Color.RED);
