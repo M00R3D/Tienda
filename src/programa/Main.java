@@ -3,16 +3,6 @@ import java.util.Scanner;
 
 public class Main {
 
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 	private static Fecha crearFecha(Scanner scanner) {
 		// Pedir los datos de la fecha al usuario
@@ -235,13 +225,6 @@ public class Main {
         Direccion direccion = new Direccion(numeroDireccion, codigoPostal, calle, calleAdicional, segundaCalleAdicional);
 
         // Crear un objeto de la clase Local
-        Local local = new Local(nombre, direccion, codigoPostal, telefono);
-
-        // Imprimir los datos del local creado
-        System.out.println("\nDatos del local:");
-        System.out.println("Nombre: " + local.getNombre());
-        System.out.println("Dirección: " + local.getDireccion().getNumero() + " " + local.getDireccion().getCalle());
-        System.out.println("Código Postal: " + local.getCodigoPostal());
-        System.out.println("Teléfono: " + local.getTelefono());
+      
 	}
 }
