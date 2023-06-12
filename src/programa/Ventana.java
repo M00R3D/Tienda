@@ -308,8 +308,9 @@ public class Ventana {
 		historial.setLocation(10, 330);
 		Crearpedido.add(historial);
 		
-		JButton regresar = new JButton("regresar");
-		regresar.setBounds(700, 400, 206, 35);
+		ImageIcon imgRegresar = new ImageIcon("regresar.png");
+		JButton regresar = new JButton(imgRegresar);
+		regresar.setBounds(700, 400, 100,100);
 		regresar.addActionListener(new ActionListener() { 
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -356,6 +357,9 @@ public class Ventana {
 		JLabel añadirjl = new JLabel("Añadir");
 		JLabel iconjl = new JLabel("Eliminar");
 		JLabel buscarjl = new JLabel("Buscar");
+		añadirjl.setFont(new Font("Arial", Font.BOLD, 20));
+		iconjl.setFont(new Font("Arial", Font.BOLD, 20));
+		buscarjl.setFont(new Font("Arial", Font.BOLD, 20));
 		añadirjl.setBounds(150, 300, 130, 30);
 		iconjl.setBounds(150, 350, 130, 30);
 		buscarjl.setBounds(150, 400, 130, 30);
@@ -368,8 +372,9 @@ public class Ventana {
 		eliminar.setBounds(100, 350, 30, 30);
 		JButton buscar = new JButton(img15);
 		buscar.setBounds(100, 400, 30, 30);
-		JButton regresar = new JButton("regresar");
-		regresar.setBounds(700, 400, 206, 35);
+		ImageIcon imgRegresar = new ImageIcon("regresar.png");
+		JButton regresar = new JButton(imgRegresar);
+		regresar.setBounds(700, 400, 100,100);
 		regresar.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -422,6 +427,9 @@ public class Ventana {
 		JLabel añadirjl = new JLabel("Añadir");
 		JLabel iconjl = new JLabel("Eliminar");
 		JLabel buscarjl = new JLabel("Buscar");
+		añadirjl.setFont(new Font("Arial", Font.BOLD, 20));
+		iconjl.setFont(new Font("Arial", Font.BOLD, 20));
+		buscarjl.setFont(new Font("Arial", Font.BOLD, 20));
 		añadirjl.setBounds(150, 300, 130, 30);
 		iconjl.setBounds(150, 350, 130, 30);
 		buscarjl.setBounds(150, 400, 130, 30);
@@ -434,8 +442,9 @@ public class Ventana {
 		eliminar.setBounds(100, 350, 30, 30);
 		JButton buscar = new JButton(img15);
 		buscar.setBounds(100, 400, 30, 30);
-		JButton regresar = new JButton("regresar");
-		regresar.setBounds(700, 400, 206, 35);
+		ImageIcon imgRegresar = new ImageIcon("regresar.png");
+		JButton regresar = new JButton(imgRegresar);
+		regresar.setBounds(700, 400, 100,100);
 		regresar.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -490,20 +499,25 @@ public class Ventana {
 		JLabel añadirjl = new JLabel("Añadir");
 		JLabel iconjl = new JLabel("Eliminar");
 		JLabel buscarjl = new JLabel("Buscar");
+		añadirjl.setFont(new Font("Arial", Font.BOLD, 20));
+		iconjl.setFont(new Font("Arial", Font.BOLD, 20));
+		buscarjl.setFont(new Font("Arial", Font.BOLD, 20));
 		añadirjl.setBounds(150, 300, 130, 30);
 		iconjl.setBounds(150, 350, 130, 30);
 		buscarjl.setBounds(150, 400, 130, 30);
 		ImageIcon img13 = new ImageIcon("añadir.png");
 		ImageIcon img14 = new ImageIcon("Icon1.jpg");
 		ImageIcon img15 = new ImageIcon("buscar.jpg");
+		ImageIcon imgRegresar = new ImageIcon("regresar.png");
+
 		JButton añadir = new JButton(img13);
 		añadir.setBounds(100, 300, 30, 30);
 		JButton eliminar = new JButton(img14);
 		eliminar.setBounds(100, 350, 30, 30);
 		JButton buscar = new JButton(img15);
 		buscar.setBounds(100, 400, 30, 30);
-		JButton regresar = new JButton("regresar");
-		regresar.setBounds(700, 400, 206, 35);
+		JButton regresar = new JButton(imgRegresar);
+		regresar.setBounds(700, 400, 100,100);
 		regresar.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
