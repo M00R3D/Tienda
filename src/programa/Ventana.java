@@ -1,4 +1,4 @@
-package programa;
+	package programa;
 
 import java.awt.EventQueue;
 
