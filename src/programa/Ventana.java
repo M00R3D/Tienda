@@ -30,6 +30,8 @@ public class Ventana {
 	private JPanel gran_panel;
 	private String actual="Inicio";
 	private String anterior="Inicio";
+	private String subPanelPedidos="loby";
+
 	/**
 	 * Launch the application.
 	 */
@@ -213,114 +215,260 @@ public class Ventana {
 	public JPanel Crearpedido() 
 	{
 //////////PANEL DE PEDUDO MAS LOA 2 BOTONES DE CARRITO Y ELIMINAR
+		
 		JPanel Crearpedido = new JPanel();
 		Crearpedido.setBackground(Color.WHITE);
 		frame.getContentPane().add(Crearpedido, "name_389654201308900");
 		Crearpedido.setLayout(null);
+		if(subPanelPedidos=="loby") {CrearpedidoLoby(Crearpedido);}		
 
-		////// TITULO DE CREAR PEDIDOS
-		JLabel tag11 = new JLabel("BIENVENIDO A LA SESION DE PEDIDOS");
-		tag11.setBackground(Color.BLACK);
-		tag11.setHorizontalAlignment(SwingConstants.CENTER);
-		tag11.setSize(454, 45);
-		tag11.setFont(new Font("Arial", Font.BOLD, 20));
-		tag11.setForeground(Color.PINK);
-		tag11.setLocation(208, 41);
-		Crearpedido.add(tag11);
-
-		//// LOGOS DEL SUPER
-		ImageIcon img5 = new ImageIcon("Logo2.png");
-		JLabel im5 = new JLabel(img5);
-		im5.setHorizontalAlignment(SwingConstants.LEFT);
-		im5.setBounds(42, 11, 124, 187);
-
-		Image esc5 = img5.getImage().getScaledInstance(im5.getWidth(), im5.getHeight(), Image.SCALE_SMOOTH);
-		Icon ices5 = new ImageIcon(esc5);
-		im5.setIcon(ices5);
-		Crearpedido.add(im5);
-
-		ImageIcon img6 = new ImageIcon("Logotipo2.png");
-		JLabel im6 = new JLabel(img6);
-		im6.setHorizontalAlignment(SwingConstants.LEFT);
-		im6.setBounds(738, 25, 149, 187);
-
-		Image esc6 = img6.getImage().getScaledInstance(im6.getWidth(), im6.getHeight(), Image.SCALE_SMOOTH);
-		Icon ices6 = new ImageIcon(esc6);
-		im6.setIcon(ices6);
-		Crearpedido.add(im6);
 		
-		
-		ImageIcon img13 = new ImageIcon("1.png");
-		JButton im13 = new JButton(img13);
-		im13 .setSize(46, 42);
-		im13.setLocation(50, 220);
-
-		Image esc13 = img13.getImage().getScaledInstance(im13.getWidth(), im13.getHeight(), Image.SCALE_SMOOTH);
-		Icon ices13 = new ImageIcon(esc13);
-		im13.setIcon(ices13);
-		Crearpedido.add(im13);
-		
-		
-
-		ImageIcon img14 = new ImageIcon("2.jpeg");
-		JButton im14 = new JButton(img14);
-		im14.setSize(46, 42);
-		im14.setLocation(50, 280);
-
-		Image esc14 = img14.getImage().getScaledInstance(im14.getWidth(), im14.getHeight(), Image.SCALE_SMOOTH);
-		Icon ices14 = new ImageIcon(esc14);
-		im14.setIcon(ices14);
-		Crearpedido.add(im14);
-		
-		ImageIcon img15 = new ImageIcon("3.png");
-		JButton im15 = new JButton(img15);
-		im15.setSize(46, 42);
-		im15.setLocation(50, 340);
-
-		Image esc15 = img15.getImage().getScaledInstance(im15.getWidth(), im15.getHeight(), Image.SCALE_SMOOTH);
-		Icon ices15 = new ImageIcon(esc15);
-		im15.setIcon(ices15);
-		Crearpedido.add(im15);
-
-			/////////////// Texto de cada boton
-		JLabel agregar = new JLabel("Agregar algo al carrito");
-		agregar.setHorizontalAlignment(SwingConstants.CENTER);
-		agregar.setSize(276, 53);
-		agregar.setFont(new Font("Arial", Font.BOLD, 20));
-		agregar.setForeground(Color.decode("#000000"));
-		agregar.setLocation(80, 210);
-		Crearpedido.add(agregar);
-		
-
-		JLabel eliminar = new JLabel("Eliminar");
-		eliminar.setHorizontalAlignment(SwingConstants.CENTER);
-		eliminar.setSize(276, 53);
-		eliminar.setFont(new Font("Arial", Font.BOLD, 20));
-		eliminar.setForeground(Color.decode("#000000"));
-		eliminar.setLocation(10, 275);
-		Crearpedido.add(eliminar);
-		
-		JLabel historial = new JLabel("Historial");
-		historial.setHorizontalAlignment(SwingConstants.CENTER);
-		historial.setSize(276, 53);
-		historial.setFont(new Font("Arial", Font.BOLD, 20));
-		historial.setForeground(Color.decode("#000000"));
-		historial.setLocation(10, 330);
-		Crearpedido.add(historial);
-		
-		ImageIcon imgRegresar = new ImageIcon("regresar.png");
-		JButton regresar = new JButton(imgRegresar);
-		regresar.setBounds(700, 400, 100,100);
-		regresar.addActionListener(new ActionListener() { 
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				anterior = actual;
-				actual = "Inicio";
-				route();
-			}});
-		Crearpedido.add(regresar);
 		return Crearpedido;
 	}
+						public void CrearpedidoLoby(JPanel Crearpedido) 
+						{
+								Crearpedido.removeAll();
+								JLabel tag11 = new JLabel("BIENVENIDO A LA SESION DE PEDIDOS");
+								tag11.setBackground(Color.BLACK);
+								tag11.setHorizontalAlignment(SwingConstants.CENTER);
+								tag11.setSize(454, 45);
+								tag11.setFont(new Font("Arial", Font.BOLD, 20));
+								tag11.setForeground(Color.PINK);
+								tag11.setLocation(208, 41);
+								Crearpedido.add(tag11);
+								ImageIcon img5 = new ImageIcon("Logo2.png");
+								JLabel im5 = new JLabel(img5);
+								im5.setHorizontalAlignment(SwingConstants.LEFT);
+								im5.setBounds(42, 11, 124, 187);
+								Image esc5 = img5.getImage().getScaledInstance(im5.getWidth(), im5.getHeight(), Image.SCALE_SMOOTH);
+								Icon ices5 = new ImageIcon(esc5);
+								im5.setIcon(ices5);
+								Crearpedido.add(im5);
+								ImageIcon img6 = new ImageIcon("Logotipo2.png");
+								JLabel im6 = new JLabel(img6);
+								im6.setHorizontalAlignment(SwingConstants.LEFT);
+								im6.setBounds(738, 25, 149, 187);
+								Image esc6 = img6.getImage().getScaledInstance(im6.getWidth(), im6.getHeight(), Image.SCALE_SMOOTH);
+								Icon ices6 = new ImageIcon(esc6);
+								im6.setIcon(ices6);
+								Crearpedido.add(im6);
+								ImageIcon img13 = new ImageIcon("1.png");
+								JButton BtnCrearPedido = new JButton(img13);
+								BtnCrearPedido .setSize(46, 42);
+								BtnCrearPedido.setLocation(50, 220);
+								Image esc13 = img13.getImage().getScaledInstance(BtnCrearPedido.getWidth(), BtnCrearPedido.getHeight(), Image.SCALE_SMOOTH);
+								Icon ices13 = new ImageIcon(esc13);
+								BtnCrearPedido.setIcon(ices13);
+								BtnCrearPedido.addActionListener(new ActionListener() {
+									@Override
+									public void actionPerformed(ActionEvent e) {
+										subPanelPedidos="crear";
+										CrearpedidoCrear(Crearpedido);
+										frame.repaint();
+									}});
+								Crearpedido.add(BtnCrearPedido);
+								ImageIcon img14 = new ImageIcon("2.jpeg");
+								JButton BtnEliminarPedido = new JButton(img14);
+								BtnEliminarPedido.setSize(46, 42);
+								BtnEliminarPedido.setLocation(50, 280);
+								BtnEliminarPedido.addActionListener(new ActionListener() {
+									@Override
+									public void actionPerformed(ActionEvent e) {
+										subPanelPedidos="eliminar";
+										CrearpedidoDel(Crearpedido);
+										frame.repaint();
+									}});
+								Image esc14 = img14.getImage().getScaledInstance(BtnEliminarPedido.getWidth(), BtnEliminarPedido.getHeight(), Image.SCALE_SMOOTH);
+								Icon ices14 = new ImageIcon(esc14);
+								BtnEliminarPedido.setIcon(ices14);
+								Crearpedido.add(BtnEliminarPedido);
+								ImageIcon img15 = new ImageIcon("3.png");
+								JButton BtnBuscarPedidos = new JButton(img15);
+								BtnBuscarPedidos.setSize(46, 42);
+								BtnBuscarPedidos.setLocation(50, 340);
+								BtnBuscarPedidos.addActionListener(new ActionListener() {
+									@Override
+									public void actionPerformed(ActionEvent e) {
+										subPanelPedidos="buscar";
+										CrearpedidoBus(Crearpedido);
+										frame.repaint();
+									}});
+								Image esc15 = img15.getImage().getScaledInstance(BtnBuscarPedidos.getWidth(), BtnBuscarPedidos.getHeight(), Image.SCALE_SMOOTH);
+								Icon ices15 = new ImageIcon(esc15);
+								BtnBuscarPedidos.setIcon(ices15);
+								Crearpedido.add(BtnBuscarPedidos);
+									/////////////// Texto de cada boton
+								JLabel agregar = new JLabel("Agregar algo al carrito");
+								agregar.setHorizontalAlignment(SwingConstants.CENTER);
+								agregar.setSize(276, 53);
+								agregar.setFont(new Font("Arial", Font.BOLD, 20));
+								agregar.setForeground(Color.decode("#000000"));
+								agregar.setLocation(80, 210);
+								Crearpedido.add(agregar);
+								JLabel eliminar = new JLabel("Eliminar");
+								eliminar.setHorizontalAlignment(SwingConstants.CENTER);
+								eliminar.setSize(276, 53);
+								eliminar.setFont(new Font("Arial", Font.BOLD, 20));
+								eliminar.setForeground(Color.decode("#000000"));
+								eliminar.setLocation(10, 275);
+								Crearpedido.add(eliminar);
+								JLabel historial = new JLabel("Historial");
+								historial.setHorizontalAlignment(SwingConstants.CENTER);
+								historial.setSize(276, 53);
+								historial.setFont(new Font("Arial", Font.BOLD, 20));
+								historial.setForeground(Color.decode("#000000"));
+								historial.setLocation(10, 330);
+								Crearpedido.add(historial);
+								ImageIcon imgRegresar = new ImageIcon("regresar.png");
+								JButton regresar = new JButton(imgRegresar);
+								regresar.setBounds(700, 400, 100,100);
+								regresar.addActionListener(new ActionListener() {
+									@Override
+									public void actionPerformed(ActionEvent e) {
+										if(subPanelPedidos=="loby")
+										{anterior = actual;
+										actual = "Inicio";
+										route();}
+									}});
+								Crearpedido.add(regresar);
+						}
+						
+						public void CrearpedidoCrear(JPanel Crearpedido) 
+						{
+								Crearpedido.removeAll();
+								JLabel tag11 = new JLabel("BIENVENIDO A LA SESION DE PEDIDOS");
+								tag11.setBackground(Color.BLACK);
+								tag11.setHorizontalAlignment(SwingConstants.CENTER);
+								tag11.setSize(454, 45);
+								tag11.setFont(new Font("Arial", Font.BOLD, 20));
+								tag11.setForeground(Color.PINK);
+								tag11.setLocation(208, 41);
+								Crearpedido.add(tag11);
+								ImageIcon img5 = new ImageIcon("Logo2.png");
+								JLabel im5 = new JLabel(img5);
+								im5.setHorizontalAlignment(SwingConstants.LEFT);
+								im5.setBounds(42, 11, 124, 187);
+								Image esc5 = img5.getImage().getScaledInstance(im5.getWidth(), im5.getHeight(), Image.SCALE_SMOOTH);
+								Icon ices5 = new ImageIcon(esc5);
+								im5.setIcon(ices5);
+								Crearpedido.add(im5);
+								ImageIcon img6 = new ImageIcon("Logotipo2.png");
+								JLabel im6 = new JLabel(img6);
+								im6.setHorizontalAlignment(SwingConstants.LEFT);
+								im6.setBounds(738, 25, 149, 187);
+								Image esc6 = img6.getImage().getScaledInstance(im6.getWidth(), im6.getHeight(), Image.SCALE_SMOOTH);
+								Icon ices6 = new ImageIcon(esc6);
+								im6.setIcon(ices6);
+								Crearpedido.add(im6);
+								ImageIcon imgRegresar = new ImageIcon("regresar.png");
+								JButton regresar = new JButton(imgRegresar);
+								regresar.setBounds(700, 400, 100,100);
+								regresar.addActionListener(new ActionListener() {
+									@Override
+									public void actionPerformed(ActionEvent e) {
+										if(subPanelPedidos=="loby")
+										{anterior = actual;
+										actual = "Inicio";
+										route();}else if(subPanelPedidos=="crear") 
+										{
+											CrearpedidoLoby(Crearpedido);
+											subPanelPedidos="loby";
+											frame.repaint();
+										}
+									}});
+								Crearpedido.add(regresar);
+						}
+						public void CrearpedidoDel(JPanel Crearpedido) 
+						{
+								Crearpedido.removeAll();
+								JLabel tag11 = new JLabel("BIENVENIDO A LA SESION DE PEDIDOS");
+								tag11.setBackground(Color.BLACK);
+								tag11.setHorizontalAlignment(SwingConstants.CENTER);
+								tag11.setSize(454, 45);
+								tag11.setFont(new Font("Arial", Font.BOLD, 20));
+								tag11.setForeground(Color.PINK);
+								tag11.setLocation(208, 41);
+								Crearpedido.add(tag11);
+								ImageIcon img5 = new ImageIcon("Logo2.png");
+								JLabel im5 = new JLabel(img5);
+								im5.setHorizontalAlignment(SwingConstants.LEFT);
+								im5.setBounds(42, 11, 124, 187);
+								Image esc5 = img5.getImage().getScaledInstance(im5.getWidth(), im5.getHeight(), Image.SCALE_SMOOTH);
+								Icon ices5 = new ImageIcon(esc5);
+								im5.setIcon(ices5);
+								Crearpedido.add(im5);
+								ImageIcon img6 = new ImageIcon("Logotipo2.png");
+								JLabel im6 = new JLabel(img6);
+								im6.setHorizontalAlignment(SwingConstants.LEFT);
+								im6.setBounds(738, 25, 149, 187);
+								Image esc6 = img6.getImage().getScaledInstance(im6.getWidth(), im6.getHeight(), Image.SCALE_SMOOTH);
+								Icon ices6 = new ImageIcon(esc6);
+								im6.setIcon(ices6);
+								Crearpedido.add(im6);
+								ImageIcon imgRegresar = new ImageIcon("regresar.png");
+								JButton regresar = new JButton(imgRegresar);
+								regresar.setBounds(700, 400, 100,100);
+								regresar.addActionListener(new ActionListener() {
+									@Override
+									public void actionPerformed(ActionEvent e) {
+										if(subPanelPedidos=="loby")
+										{anterior = actual;
+										actual = "Inicio";
+										route();}else if(subPanelPedidos=="eliminar") 
+										{
+											subPanelPedidos="loby";
+											CrearpedidoLoby(Crearpedido);
+											frame.repaint();
+										}
+									}});
+								Crearpedido.add(regresar);
+						}
+						public void CrearpedidoBus(JPanel Crearpedido) 
+						{
+								Crearpedido.removeAll();
+								JLabel tag11 = new JLabel("BIENVENIDO A LA SESION DE PEDIDOS");
+								tag11.setBackground(Color.BLACK);
+								tag11.setHorizontalAlignment(SwingConstants.CENTER);
+								tag11.setSize(454, 45);
+								tag11.setFont(new Font("Arial", Font.BOLD, 20));
+								tag11.setForeground(Color.PINK);
+								tag11.setLocation(208, 41);
+								Crearpedido.add(tag11);
+								ImageIcon img5 = new ImageIcon("Logo2.png");
+								JLabel im5 = new JLabel(img5);
+								im5.setHorizontalAlignment(SwingConstants.LEFT);
+								im5.setBounds(42, 11, 124, 187);
+								Image esc5 = img5.getImage().getScaledInstance(im5.getWidth(), im5.getHeight(), Image.SCALE_SMOOTH);
+								Icon ices5 = new ImageIcon(esc5);
+								im5.setIcon(ices5);
+								Crearpedido.add(im5);
+								ImageIcon img6 = new ImageIcon("Logotipo2.png");
+								JLabel im6 = new JLabel(img6);
+								im6.setHorizontalAlignment(SwingConstants.LEFT);
+								im6.setBounds(738, 25, 149, 187);
+								Image esc6 = img6.getImage().getScaledInstance(im6.getWidth(), im6.getHeight(), Image.SCALE_SMOOTH);
+								Icon ices6 = new ImageIcon(esc6);
+								im6.setIcon(ices6);
+								Crearpedido.add(im6);
+								ImageIcon imgRegresar = new ImageIcon("regresar.png");
+								JButton regresar = new JButton(imgRegresar);
+								regresar.setBounds(700, 400, 100,100);
+								regresar.addActionListener(new ActionListener() {
+									@Override
+									public void actionPerformed(ActionEvent e) {
+										if(subPanelPedidos=="loby")
+										{anterior = actual;
+										actual = "Inicio";
+										route();}else if(subPanelPedidos=="buscar") 
+										{
+											subPanelPedidos="loby";
+											CrearpedidoLoby(Crearpedido);
+											frame.repaint();
+										}
+									}});
+								Crearpedido.add(regresar);
+						}
+	
 	
 	JPanel Crearprovedor() 
 	{
