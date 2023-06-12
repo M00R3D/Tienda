@@ -109,15 +109,7 @@ public class Ventana {
 		tag4.setForeground(Color.RED);
 		tag4.setLocation(282, 157);
 		Inicio.add(tag4);
-		// TITULO DE CREAR PERSONA
-		JLabel tag5 = new JLabel("CREAR PERSONA");
-		tag5.setBackground(Color.BLACK);
-		tag5.setHorizontalAlignment(SwingConstants.CENTER);
-		tag5.setSize(312, 24);
-		tag5.setFont(new Font("Arial", Font.BOLD, 20));
-		tag5.setForeground(Color.RED);
-		tag5.setLocation(40, 234);
-		Inicio.add(tag5);
+
 		// TITULO DE ORDEN DEL PEDIDO
 		JLabel tag6 = new JLabel("ORDEN DEL PEDIDO");
 		tag6.setBackground(Color.BLACK);
@@ -125,7 +117,7 @@ public class Ventana {
 		tag6.setSize(312, 24);
 		tag6.setFont(new Font("Arial", Font.BOLD, 20));
 		tag6.setForeground(Color.RED);
-		tag6.setLocation(487, 234);
+		tag6.setLocation(80, 234);
 		Inicio.add(tag6);
 		// TITULO DEL PROVEDOR
 		JLabel tag7 = new JLabel("PROVEDOR");
@@ -146,13 +138,13 @@ public class Ventana {
 		tag8.setLocation(487, 366);
 		Inicio.add(tag8);
 		// TITULO DE LA ORDEN DE COMPRA
-		JLabel tag9 = new JLabel("ORDEN DE LA COMPRA");
+		JLabel tag9 = new JLabel("CREAR PRODUCTO");
 		tag9.setBackground(Color.BLACK);
 		tag9.setHorizontalAlignment(SwingConstants.CENTER);
 		tag9.setSize(312, 24);
 		tag9.setFont(new Font("Arial", Font.BOLD, 20));
 		tag9.setForeground(Color.RED);
-		tag9.setLocation(257, 474);
+		tag9.setLocation(500, 234);
 		Inicio.add(tag9);
 		// LOGOS DEL SUPER
 		ImageIcon img1 = new ImageIcon("Logo.jpg");
@@ -173,7 +165,7 @@ public class Ventana {
 		Inicio.add(im2);
 		// CREAR AL PROVEDOR
 		JButton provedor = new JButton("Crear provedor");
-		provedor.setBounds(38, 414, 149, 34);
+		provedor.setBounds(138, 414, 149, 34);
 		provedor.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -184,7 +176,7 @@ public class Ventana {
 		Inicio.add(provedor);
 		// CREAR AL EMPLEADO
 		JButton empleado = new JButton("Crear empleado");
-		empleado.setBounds(429, 414, 197, 34);
+		empleado.setBounds(513, 414, 197, 34);
 		empleado.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -195,7 +187,7 @@ public class Ventana {
 		Inicio.add(empleado);
 		// CREAR LAS ORDEN COMPRAS
 		JButton producto = new JButton(" Crear Producto");
-		producto.setBounds(213, 509, 206, 34);
+		producto.setBounds(513, 282, 206, 34);
 		producto.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -206,7 +198,7 @@ public class Ventana {
 		Inicio.add(producto);
 		// CREAR LA ORDEH DEL PEDIDO
 		JButton orden = new JButton("Crear la orden del pedido");
-		orden.setBounds(429, 292, 206, 35);
+		orden.setBounds(129, 282, 206, 35);
 		orden.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -318,7 +310,7 @@ public class Ventana {
 		
 		JButton regresar = new JButton("regresar");
 		regresar.setBounds(700, 400, 206, 35);
-		regresar.addActionListener(new ActionListener() {
+		regresar.addActionListener(new ActionListener() { 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				anterior = actual;
