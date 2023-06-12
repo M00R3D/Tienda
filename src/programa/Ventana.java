@@ -30,7 +30,7 @@ public class Ventana {
 	private JPanel gran_panel;
 	private String actual="Inicio";
 	private String anterior="Inicio";
-	private String subPanelPedidos="loby";
+	private String subPanelPedidos="loby",subPanelProvedor="loby",subPanelEmpleados="loby",subPanelProductos="loby";
 
 	/**
 	 * Launch the application.
@@ -476,213 +476,719 @@ public class Ventana {
 		Crearprovedor.setBackground(Color.RED);
 		frame.getContentPane().add(Crearprovedor, "name_389654215556400");
 		Crearprovedor.setLayout(null);
-		////// TITULO DE CREAR PERSONA
-		JLabel tag12 = new JLabel("BIENVENIDO A LA SESION DE PEDIDO");
-		tag12.setBackground(Color.BLACK);
-		tag12.setHorizontalAlignment(SwingConstants.CENTER);
-		tag12.setSize(387, 45);
-		tag12.setFont(new Font("Arial", Font.BOLD, 20));
-		tag12.setForeground(Color.WHITE);
-		tag12.setLocation(245, 35);
-		Crearprovedor.add(tag12);
-		//// LOGOS DEL SUPER
-		ImageIcon img7 = new ImageIcon("Logo3.png");
-		JLabel im7 = new JLabel(img7);
-		im7.setHorizontalAlignment(SwingConstants.LEFT);
-		im7.setBounds(42, 25, 124, 157);
-		Image esc7 = img7.getImage().getScaledInstance(im7.getWidth(), im7.getHeight(), Image.SCALE_SMOOTH);
-		Icon ices7 = new ImageIcon(esc7);
-		im7.setIcon(ices7);
-		Crearprovedor.add(im7);
-		ImageIcon img8 = new ImageIcon("Logotipo3.png");
-		JLabel im8 = new JLabel(img8);
-		im8.setHorizontalAlignment(SwingConstants.LEFT);
-		im8.setBounds(738, 25, 149, 172);
-		Image esc8 = img8.getImage().getScaledInstance(im8.getWidth(), im8.getHeight(), Image.SCALE_SMOOTH);
-		Icon ices8 = new ImageIcon(esc8);
-		im8.setIcon(ices8);
-		Crearprovedor.add(im8);
-		JLabel añadirjl = new JLabel("Añadir");
-		JLabel iconjl = new JLabel("Eliminar");
-		JLabel buscarjl = new JLabel("Buscar");
-		añadirjl.setFont(new Font("Arial", Font.BOLD, 20));
-		iconjl.setFont(new Font("Arial", Font.BOLD, 20));
-		buscarjl.setFont(new Font("Arial", Font.BOLD, 20));
-		añadirjl.setBounds(150, 300, 130, 30);
-		iconjl.setBounds(150, 350, 130, 30);
-		buscarjl.setBounds(150, 400, 130, 30);
-		ImageIcon img13 = new ImageIcon("añadir.png");
-		ImageIcon img14 = new ImageIcon("Icon1.jpg");
-		ImageIcon img15 = new ImageIcon("buscar.jpg");
-		JButton añadir = new JButton(img13);
-		añadir.setBounds(100, 300, 30, 30);
-		JButton eliminar = new JButton(img14);
-		eliminar.setBounds(100, 350, 30, 30);
-		JButton buscar = new JButton(img15);
-		buscar.setBounds(100, 400, 30, 30);
-		ImageIcon imgRegresar = new ImageIcon("regresar.png");
-		JButton regresar = new JButton(imgRegresar);
-		regresar.setBounds(700, 400, 100,100);
-		regresar.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				anterior = actual;
-				actual = "Inicio";
-				route();
-			}});
-		Crearprovedor.add(añadirjl);
-		Crearprovedor.add(iconjl);
-		Crearprovedor.add(buscarjl);
-		Crearprovedor.add(añadir);
-		Crearprovedor.add(eliminar);
-		Crearprovedor.add(buscar );
-		Crearprovedor.add(regresar);
+		if(subPanelProvedor=="loby") {CrearprovedorLoby(Crearprovedor);}
 		return Crearprovedor;
 	}
-	
+					public void CrearprovedorLoby(JPanel Crearprovedor) 
+					{
+							Crearprovedor.removeAll();
+							////// TITULO DE CREAR PERSONA
+							JLabel tag12 = new JLabel("BIENVENIDO A LA SESION DE PEDIDO");
+							tag12.setBackground(Color.BLACK);
+							tag12.setHorizontalAlignment(SwingConstants.CENTER);
+							tag12.setSize(387, 45);
+							tag12.setFont(new Font("Arial", Font.BOLD, 20));
+							tag12.setForeground(Color.WHITE);
+							tag12.setLocation(245, 35);
+							Crearprovedor.add(tag12);
+							//// LOGOS DEL SUPER
+							ImageIcon img7 = new ImageIcon("Logo3.png");
+							JLabel im7 = new JLabel(img7);
+							im7.setHorizontalAlignment(SwingConstants.LEFT);
+							im7.setBounds(42, 25, 124, 157);
+							Image esc7 = img7.getImage().getScaledInstance(im7.getWidth(), im7.getHeight(), Image.SCALE_SMOOTH);
+							Icon ices7 = new ImageIcon(esc7);
+							im7.setIcon(ices7);
+							Crearprovedor.add(im7);
+							ImageIcon img8 = new ImageIcon("Logotipo3.png");
+							JLabel im8 = new JLabel(img8);
+							im8.setHorizontalAlignment(SwingConstants.LEFT);
+							im8.setBounds(738, 25, 149, 172);
+							Image esc8 = img8.getImage().getScaledInstance(im8.getWidth(), im8.getHeight(), Image.SCALE_SMOOTH);
+							Icon ices8 = new ImageIcon(esc8);
+							im8.setIcon(ices8);
+							Crearprovedor.add(im8);
+							JLabel añadirjl = new JLabel("Añadir");
+							JLabel iconjl = new JLabel("Eliminar");
+							JLabel buscarjl = new JLabel("Buscar");
+							añadirjl.setFont(new Font("Arial", Font.BOLD, 20));
+							iconjl.setFont(new Font("Arial", Font.BOLD, 20));
+							buscarjl.setFont(new Font("Arial", Font.BOLD, 20));
+							añadirjl.setBounds(150, 300, 130, 30);
+							iconjl.setBounds(150, 350, 130, 30);
+							buscarjl.setBounds(150, 400, 130, 30);
+							ImageIcon img13 = new ImageIcon("añadir.png");
+							ImageIcon img14 = new ImageIcon("Icon1.jpg");
+							ImageIcon img15 = new ImageIcon("buscar.jpg");
+							JButton añadir = new JButton(img13);
+							añadir.addActionListener(new ActionListener() {
+								@Override
+								public void actionPerformed(ActionEvent e) {
+									subPanelProvedor="crear";
+									CrearprovedorCrear(Crearprovedor);
+									frame.repaint();
+								}});
+							añadir.setBounds(100, 300, 30, 30);
+							JButton eliminar = new JButton(img14);
+							eliminar.setBounds(100, 350, 30, 30);
+							eliminar.addActionListener(new ActionListener() {
+								@Override
+								public void actionPerformed(ActionEvent e) {
+									subPanelProvedor="eliminar";
+									CrearprovedorDel(Crearprovedor);
+									frame.repaint();
+								}});
+							JButton buscar = new JButton(img15);
+							buscar.setBounds(100, 400, 30, 30);
+							buscar.addActionListener(new ActionListener() {
+								@Override
+								public void actionPerformed(ActionEvent e) {
+									subPanelProvedor="buscar";
+									CrearprovedorBuscar(Crearprovedor);
+									frame.repaint();
+								}});
+							ImageIcon imgRegresar = new ImageIcon("regresar.png");
+							JButton regresar = new JButton(imgRegresar);
+							regresar.setBounds(700, 400, 100,100);
+							regresar.addActionListener(new ActionListener() {
+								@Override
+								public void actionPerformed(ActionEvent e) {
+									if(subPanelProvedor=="loby")
+									{anterior = actual;
+									actual = "Inicio";
+									route();}
+								}});
+							Crearprovedor.add(añadirjl);
+							Crearprovedor.add(iconjl);
+							Crearprovedor.add(buscarjl);
+							Crearprovedor.add(añadir);
+							Crearprovedor.add(eliminar);
+							Crearprovedor.add(buscar );
+							Crearprovedor.add(regresar);
+					}
+					
+					public void CrearprovedorCrear(JPanel Crearprovedor) 
+					{
+							Crearprovedor.removeAll();
+							////// TITULO DE CREAR PERSONA
+							JLabel tag12 = new JLabel("BIENVENIDO A LA SESION DE PEDIDO");
+							tag12.setBackground(Color.BLACK);
+							tag12.setHorizontalAlignment(SwingConstants.CENTER);
+							tag12.setSize(387, 45);
+							tag12.setFont(new Font("Arial", Font.BOLD, 20));
+							tag12.setForeground(Color.WHITE);
+							tag12.setLocation(245, 35);
+							Crearprovedor.add(tag12);
+							//// LOGOS DEL SUPER
+							ImageIcon img7 = new ImageIcon("Logo3.png");
+							JLabel im7 = new JLabel(img7);
+							im7.setHorizontalAlignment(SwingConstants.LEFT);
+							im7.setBounds(42, 25, 124, 157);
+							Image esc7 = img7.getImage().getScaledInstance(im7.getWidth(), im7.getHeight(), Image.SCALE_SMOOTH);
+							Icon ices7 = new ImageIcon(esc7);
+							im7.setIcon(ices7);
+							Crearprovedor.add(im7);
+							ImageIcon img8 = new ImageIcon("Logotipo3.png");
+							JLabel im8 = new JLabel(img8);
+							im8.setHorizontalAlignment(SwingConstants.LEFT);
+							im8.setBounds(738, 25, 149, 172);
+							Image esc8 = img8.getImage().getScaledInstance(im8.getWidth(), im8.getHeight(), Image.SCALE_SMOOTH);
+							Icon ices8 = new ImageIcon(esc8);
+							im8.setIcon(ices8);
+							Crearprovedor.add(im8);
+							ImageIcon imgRegresar = new ImageIcon("regresar.png");
+							JButton regresar = new JButton(imgRegresar);
+							regresar.setBounds(700, 400, 100,100);
+							regresar.addActionListener(new ActionListener() {
+								@Override
+								public void actionPerformed(ActionEvent e) {
+									if(subPanelProvedor=="loby")
+									{anterior = actual;
+									actual = "Inicio";
+									route();}else if(subPanelProvedor=="crear") 
+									{
+										CrearprovedorLoby(Crearprovedor);
+										subPanelProvedor="loby";
+										frame.repaint();
+									}
+								}});
+							Crearprovedor.add(regresar);
+					}
+					public void CrearprovedorDel(JPanel Crearprovedor) 
+					{
+							Crearprovedor.removeAll();
+							////// TITULO DE CREAR PERSONA
+							JLabel tag12 = new JLabel("BIENVENIDO A LA SESION DE PEDIDO");
+							tag12.setBackground(Color.BLACK);
+							tag12.setHorizontalAlignment(SwingConstants.CENTER);
+							tag12.setSize(387, 45);
+							tag12.setFont(new Font("Arial", Font.BOLD, 20));
+							tag12.setForeground(Color.WHITE);
+							tag12.setLocation(245, 35);
+							Crearprovedor.add(tag12);
+							//// LOGOS DEL SUPER
+							ImageIcon img7 = new ImageIcon("Logo3.png");
+							JLabel im7 = new JLabel(img7);
+							im7.setHorizontalAlignment(SwingConstants.LEFT);
+							im7.setBounds(42, 25, 124, 157);
+							Image esc7 = img7.getImage().getScaledInstance(im7.getWidth(), im7.getHeight(), Image.SCALE_SMOOTH);
+							Icon ices7 = new ImageIcon(esc7);
+							im7.setIcon(ices7);
+							Crearprovedor.add(im7);
+							ImageIcon img8 = new ImageIcon("Logotipo3.png");
+							JLabel im8 = new JLabel(img8);
+							im8.setHorizontalAlignment(SwingConstants.LEFT);
+							im8.setBounds(738, 25, 149, 172);
+							Image esc8 = img8.getImage().getScaledInstance(im8.getWidth(), im8.getHeight(), Image.SCALE_SMOOTH);
+							Icon ices8 = new ImageIcon(esc8);
+							im8.setIcon(ices8);
+							Crearprovedor.add(im8);
+							ImageIcon imgRegresar = new ImageIcon("regresar.png");
+							JButton regresar = new JButton(imgRegresar);
+							regresar.setBounds(700, 400, 100,100);
+							regresar.addActionListener(new ActionListener() {
+								@Override
+								public void actionPerformed(ActionEvent e) {
+									if(subPanelProvedor=="loby")
+									{anterior = actual;
+									actual = "Inicio";
+									route();}else if(subPanelProvedor=="eliminar") 
+									{
+										CrearprovedorLoby(Crearprovedor);
+										subPanelProvedor="loby";
+										frame.repaint();
+									}
+								}});
+							Crearprovedor.add(regresar);
+					}
+					public void CrearprovedorBuscar(JPanel Crearprovedor) 
+					{
+							Crearprovedor.removeAll();
+							////// TITULO DE CREAR PERSONA
+							JLabel tag12 = new JLabel("BIENVENIDO A LA SESION DE PEDIDO");
+							tag12.setBackground(Color.BLACK);
+							tag12.setHorizontalAlignment(SwingConstants.CENTER);
+							tag12.setSize(387, 45);
+							tag12.setFont(new Font("Arial", Font.BOLD, 20));
+							tag12.setForeground(Color.WHITE);
+							tag12.setLocation(245, 35);
+							Crearprovedor.add(tag12);
+							//// LOGOS DEL SUPER
+							ImageIcon img7 = new ImageIcon("Logo3.png");
+							JLabel im7 = new JLabel(img7);
+							im7.setHorizontalAlignment(SwingConstants.LEFT);
+							im7.setBounds(42, 25, 124, 157);
+							Image esc7 = img7.getImage().getScaledInstance(im7.getWidth(), im7.getHeight(), Image.SCALE_SMOOTH);
+							Icon ices7 = new ImageIcon(esc7);
+							im7.setIcon(ices7);
+							Crearprovedor.add(im7);
+							ImageIcon img8 = new ImageIcon("Logotipo3.png");
+							JLabel im8 = new JLabel(img8);
+							im8.setHorizontalAlignment(SwingConstants.LEFT);
+							im8.setBounds(738, 25, 149, 172);
+							Image esc8 = img8.getImage().getScaledInstance(im8.getWidth(), im8.getHeight(), Image.SCALE_SMOOTH);
+							Icon ices8 = new ImageIcon(esc8);
+							im8.setIcon(ices8);
+							Crearprovedor.add(im8);
+							ImageIcon imgRegresar = new ImageIcon("regresar.png");
+							JButton regresar = new JButton(imgRegresar);
+							regresar.setBounds(700, 400, 100,100);
+							regresar.addActionListener(new ActionListener() {
+								@Override
+								public void actionPerformed(ActionEvent e) {
+									if(subPanelProvedor=="loby")
+									{anterior = actual;
+									actual = "Inicio";
+									route();}else if(subPanelProvedor=="buscar") 
+									{
+										CrearprovedorLoby(Crearprovedor);
+										subPanelProvedor="loby";
+										frame.repaint();
+									}
+								}});
+							Crearprovedor.add(regresar);
+					}					
 	public JPanel Crearempleado() 
 	{
 		JPanel Crearempleado = new JPanel();
 		Crearempleado.setBackground(Color.BLACK);
 		frame.getContentPane().add(Crearempleado, "name_389654229685100");
 		Crearempleado.setLayout(null);
-		////// TITULO DE CREAR EMPLEADO
-		JLabel tag13 = new JLabel("BIEVENIDO A LA SESION DE EMPLEADO");
-		tag13.setBackground(Color.BLACK);
-		tag13.setHorizontalAlignment(SwingConstants.CENTER);
-		tag13.setSize(429, 45);
-		tag13.setFont(new Font("Arial", Font.BOLD, 20));
-		tag13.setForeground(Color.WHITE);
-		tag13.setLocation(229, 36);
-		Crearempleado.add(tag13);
-		//// LOGOS DEL SUPER
-		ImageIcon img9 = new ImageIcon("Logo4.png");
-		JLabel im9 = new JLabel(img9);
-		im9.setHorizontalAlignment(SwingConstants.LEFT);
-		im9.setBounds(42, 25, 177, 172);
-		Image esc9 = img9.getImage().getScaledInstance(im9.getWidth(), im9.getHeight(), Image.SCALE_SMOOTH);
-		Icon ices9 = new ImageIcon(esc9);
-		im9.setIcon(ices9);
-		Crearempleado.add(im9);
-		ImageIcon img10 = new ImageIcon("Logotipo4.png");
-		JLabel im10 = new JLabel(img10);
-		im10.setHorizontalAlignment(SwingConstants.LEFT);
-		im10.setBounds(700, 25, 187, 229);
-		Image esc10 = img10.getImage().getScaledInstance(im10.getWidth(), im10.getHeight(), Image.SCALE_SMOOTH);
-		Icon ices10 = new ImageIcon(esc10);
-		im10.setIcon(ices10);
-		Crearempleado.add(im10);
-		JLabel añadirjl = new JLabel("Añadir");
-		JLabel iconjl = new JLabel("Eliminar");
-		JLabel buscarjl = new JLabel("Buscar");
-		añadirjl.setFont(new Font("Arial", Font.BOLD, 20));
-		iconjl.setFont(new Font("Arial", Font.BOLD, 20));
-		buscarjl.setFont(new Font("Arial", Font.BOLD, 20));
-		añadirjl.setBounds(150, 300, 130, 30);
-		iconjl.setBounds(150, 350, 130, 30);
-		buscarjl.setBounds(150, 400, 130, 30);
-		ImageIcon img13 = new ImageIcon("añadir.png");
-		ImageIcon img14 = new ImageIcon("Icon1.jpg");
-		ImageIcon img15 = new ImageIcon("buscar.jpg");
-		JButton añadir = new JButton(img13);
-		añadir.setBounds(100, 300, 30, 30);
-		JButton eliminar = new JButton(img14);
-		eliminar.setBounds(100, 350, 30, 30);
-		JButton buscar = new JButton(img15);
-		buscar.setBounds(100, 400, 30, 30);
-		ImageIcon imgRegresar = new ImageIcon("regresar.png");
-		JButton regresar = new JButton(imgRegresar);
-		regresar.setBounds(700, 400, 100,100);
-		regresar.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				anterior = actual;
-				actual = "Inicio";
-				route();
-			}});
-		Crearempleado.add(añadirjl);
-		Crearempleado.add(buscarjl);
-		Crearempleado.add(iconjl);
-		Crearempleado.add(regresar);
-		Crearempleado.add(añadir);
-		Crearempleado.add(eliminar);
-		Crearempleado.add(buscar);
+		if(subPanelEmpleados=="loby") {CrearempleadoLoby(Crearempleado);}
 		return Crearempleado;
 	}
-	
+					public void CrearempleadoLoby(JPanel Crearempleado) 
+					{
+						Crearempleado.removeAll();
+					////// TITULO DE CREAR EMPLEADO
+						JLabel tag13 = new JLabel("BIEVENIDO A LA SESION DE EMPLEADO");
+						tag13.setBackground(Color.BLACK);
+						tag13.setHorizontalAlignment(SwingConstants.CENTER);
+						tag13.setSize(429, 45);
+						tag13.setFont(new Font("Arial", Font.BOLD, 20));
+						tag13.setForeground(Color.WHITE);
+						tag13.setLocation(229, 36);
+						Crearempleado.add(tag13);
+						//// LOGOS DEL SUPER
+						ImageIcon img9 = new ImageIcon("Logo4.png");
+						JLabel im9 = new JLabel(img9);
+						im9.setHorizontalAlignment(SwingConstants.LEFT);
+						im9.setBounds(42, 25, 177, 172);
+						Image esc9 = img9.getImage().getScaledInstance(im9.getWidth(), im9.getHeight(), Image.SCALE_SMOOTH);
+						Icon ices9 = new ImageIcon(esc9);
+						im9.setIcon(ices9);
+						Crearempleado.add(im9);
+						ImageIcon img10 = new ImageIcon("Logotipo4.png");
+						JLabel im10 = new JLabel(img10);
+						im10.setHorizontalAlignment(SwingConstants.LEFT);
+						im10.setBounds(700, 25, 187, 229);
+						Image esc10 = img10.getImage().getScaledInstance(im10.getWidth(), im10.getHeight(), Image.SCALE_SMOOTH);
+						Icon ices10 = new ImageIcon(esc10);
+						im10.setIcon(ices10);
+						Crearempleado.add(im10);
+						JLabel añadirjl = new JLabel("Añadir");
+						JLabel iconjl = new JLabel("Eliminar");
+						JLabel buscarjl = new JLabel("Buscar");
+						añadirjl.setFont(new Font("Arial", Font.BOLD, 20));
+						iconjl.setFont(new Font("Arial", Font.BOLD, 20));
+						buscarjl.setFont(new Font("Arial", Font.BOLD, 20));
+						añadirjl.setBounds(150, 300, 130, 30);
+						iconjl.setBounds(150, 350, 130, 30);
+						buscarjl.setBounds(150, 400, 130, 30);
+						ImageIcon img13 = new ImageIcon("añadir.png");
+						ImageIcon img14 = new ImageIcon("Icon1.jpg");
+						ImageIcon img15 = new ImageIcon("buscar.jpg");
+						JButton añadir = new JButton(img13);
+						añadir.setBounds(100, 300, 30, 30);
+						añadir.addActionListener(new ActionListener() {
+							@Override
+							public void actionPerformed(ActionEvent e) {
+								CrearempleadoCrear(Crearempleado);
+								subPanelEmpleados="crear";
+								frame.repaint();
+							}});
+						JButton eliminar = new JButton(img14);
+						eliminar.setBounds(100, 350, 30, 30);
+						eliminar.addActionListener(new ActionListener() {
+							@Override
+							public void actionPerformed(ActionEvent e) {
+								CrearempleadoDel(Crearempleado);
+								subPanelEmpleados="eliminar";
+								frame.repaint();
+							}});
+						JButton buscar = new JButton(img15);
+						buscar.setBounds(100, 400, 30, 30);
+						buscar.addActionListener(new ActionListener() {
+							@Override
+							public void actionPerformed(ActionEvent e) {
+								CrearempleadoBuscar(Crearempleado);
+								subPanelEmpleados="buscar";
+								frame.repaint();
+							}});
+						ImageIcon imgRegresar = new ImageIcon("regresar.png");
+						JButton regresar = new JButton(imgRegresar);
+						regresar.setBounds(700, 400, 100,100);
+						regresar.addActionListener(new ActionListener() {
+							@Override
+							public void actionPerformed(ActionEvent e) {
+								if(subPanelEmpleados=="loby")
+								{anterior = actual;
+								actual = "Inicio";
+								route();}
+							}});
+						Crearempleado.add(añadirjl);
+						Crearempleado.add(buscarjl);
+						Crearempleado.add(iconjl);
+						Crearempleado.add(regresar);
+						Crearempleado.add(añadir);
+						Crearempleado.add(eliminar);
+						Crearempleado.add(buscar);
+					}
+					
+					public void CrearempleadoCrear(JPanel Crearempleado) 
+					{
+						Crearempleado.removeAll();
+					////// TITULO DE CREAR EMPLEADO
+						JLabel tag13 = new JLabel("BIEVENIDO A LA SESION DE EMPLEADO");
+						tag13.setBackground(Color.BLACK);
+						tag13.setHorizontalAlignment(SwingConstants.CENTER);
+						tag13.setSize(429, 45);
+						tag13.setFont(new Font("Arial", Font.BOLD, 20));
+						tag13.setForeground(Color.WHITE);
+						tag13.setLocation(229, 36);
+						Crearempleado.add(tag13);
+						//// LOGOS DEL SUPER
+						ImageIcon img9 = new ImageIcon("Logo4.png");
+						JLabel im9 = new JLabel(img9);
+						im9.setHorizontalAlignment(SwingConstants.LEFT);
+						im9.setBounds(42, 25, 177, 172);
+						Image esc9 = img9.getImage().getScaledInstance(im9.getWidth(), im9.getHeight(), Image.SCALE_SMOOTH);
+						Icon ices9 = new ImageIcon(esc9);
+						im9.setIcon(ices9);
+						Crearempleado.add(im9);
+						ImageIcon img10 = new ImageIcon("Logotipo4.png");
+						JLabel im10 = new JLabel(img10);
+						im10.setHorizontalAlignment(SwingConstants.LEFT);
+						im10.setBounds(700, 25, 187, 229);
+						Image esc10 = img10.getImage().getScaledInstance(im10.getWidth(), im10.getHeight(), Image.SCALE_SMOOTH);
+						Icon ices10 = new ImageIcon(esc10);
+						im10.setIcon(ices10);
+						Crearempleado.add(im10);
+						ImageIcon imgRegresar = new ImageIcon("regresar.png");
+						JButton regresar = new JButton(imgRegresar);
+						regresar.setBounds(700, 400, 100,100);
+						regresar.addActionListener(new ActionListener() {
+							@Override
+							public void actionPerformed(ActionEvent e) {
+								if(subPanelEmpleados=="loby")
+								{anterior = actual;
+								actual = "Inicio";
+								route();}else if(subPanelEmpleados=="crear") 
+								{
+									CrearempleadoLoby(Crearempleado);
+									subPanelEmpleados="loby";
+									frame.repaint();
+								}
+							}});
+						Crearempleado.add(regresar);
+					}
+					
+					public void CrearempleadoDel(JPanel Crearempleado) 
+					{
+						Crearempleado.removeAll();
+					////// TITULO DE CREAR EMPLEADO
+						JLabel tag13 = new JLabel("BIEVENIDO A LA SESION DE EMPLEADO");
+						tag13.setBackground(Color.BLACK);
+						tag13.setHorizontalAlignment(SwingConstants.CENTER);
+						tag13.setSize(429, 45);
+						tag13.setFont(new Font("Arial", Font.BOLD, 20));
+						tag13.setForeground(Color.WHITE);
+						tag13.setLocation(229, 36);
+						Crearempleado.add(tag13);
+						//// LOGOS DEL SUPER
+						ImageIcon img9 = new ImageIcon("Logo4.png");
+						JLabel im9 = new JLabel(img9);
+						im9.setHorizontalAlignment(SwingConstants.LEFT);
+						im9.setBounds(42, 25, 177, 172);
+						Image esc9 = img9.getImage().getScaledInstance(im9.getWidth(), im9.getHeight(), Image.SCALE_SMOOTH);
+						Icon ices9 = new ImageIcon(esc9);
+						im9.setIcon(ices9);
+						Crearempleado.add(im9);
+						ImageIcon img10 = new ImageIcon("Logotipo4.png");
+						JLabel im10 = new JLabel(img10);
+						im10.setHorizontalAlignment(SwingConstants.LEFT);
+						im10.setBounds(700, 25, 187, 229);
+						Image esc10 = img10.getImage().getScaledInstance(im10.getWidth(), im10.getHeight(), Image.SCALE_SMOOTH);
+						Icon ices10 = new ImageIcon(esc10);
+						im10.setIcon(ices10);
+						Crearempleado.add(im10);
+						ImageIcon imgRegresar = new ImageIcon("regresar.png");
+						JButton regresar = new JButton(imgRegresar);
+						regresar.setBounds(700, 400, 100,100);
+						regresar.addActionListener(new ActionListener() {
+							@Override
+							public void actionPerformed(ActionEvent e) {
+								if(subPanelEmpleados=="loby")
+								{anterior = actual;
+								actual = "Inicio";
+								route();}else if(subPanelEmpleados=="eliminar") 
+								{
+									CrearempleadoLoby(Crearempleado);
+									subPanelEmpleados="loby";
+									frame.repaint();
+								}
+							}});
+						Crearempleado.add(regresar);
+					}
+					public void CrearempleadoBuscar(JPanel Crearempleado) 
+					{
+						Crearempleado.removeAll();
+					////// TITULO DE CREAR EMPLEADO
+						JLabel tag13 = new JLabel("BIEVENIDO A LA SESION DE EMPLEADO");
+						tag13.setBackground(Color.BLACK);
+						tag13.setHorizontalAlignment(SwingConstants.CENTER);
+						tag13.setSize(429, 45);
+						tag13.setFont(new Font("Arial", Font.BOLD, 20));
+						tag13.setForeground(Color.WHITE);
+						tag13.setLocation(229, 36);
+						Crearempleado.add(tag13);
+						//// LOGOS DEL SUPER
+						ImageIcon img9 = new ImageIcon("Logo4.png");
+						JLabel im9 = new JLabel(img9);
+						im9.setHorizontalAlignment(SwingConstants.LEFT);
+						im9.setBounds(42, 25, 177, 172);
+						Image esc9 = img9.getImage().getScaledInstance(im9.getWidth(), im9.getHeight(), Image.SCALE_SMOOTH);
+						Icon ices9 = new ImageIcon(esc9);
+						im9.setIcon(ices9);
+						Crearempleado.add(im9);
+						ImageIcon img10 = new ImageIcon("Logotipo4.png");
+						JLabel im10 = new JLabel(img10);
+						im10.setHorizontalAlignment(SwingConstants.LEFT);
+						im10.setBounds(700, 25, 187, 229);
+						Image esc10 = img10.getImage().getScaledInstance(im10.getWidth(), im10.getHeight(), Image.SCALE_SMOOTH);
+						Icon ices10 = new ImageIcon(esc10);
+						im10.setIcon(ices10);
+						Crearempleado.add(im10);
+						ImageIcon imgRegresar = new ImageIcon("regresar.png");
+						JButton regresar = new JButton(imgRegresar);
+						regresar.setBounds(700, 400, 100,100);
+						regresar.addActionListener(new ActionListener() {
+							@Override
+							public void actionPerformed(ActionEvent e) {
+								if(subPanelEmpleados=="loby")
+								{anterior = actual;
+								actual = "Inicio";
+								route();}else if(subPanelEmpleados=="buscar") 
+								{
+									CrearempleadoLoby(Crearempleado);
+									subPanelEmpleados="loby";
+									frame.repaint();
+								}
+							}});
+						Crearempleado.add(regresar);
+					}
+					
+					
 	public JPanel Crearproducto() 
-	{
-//		String subpanel="loby";
-		
+	{		
 		JPanel Crearproducto = new JPanel();
 		Crearproducto.setBackground(Color.RED);
 		frame.getContentPane().add(Crearproducto, "name_389654242683100");
 		Crearproducto.setLayout(null);
-		////// TITULO DE CREAR COMPRA
-		JLabel tag14 = new JLabel("BIEVENIDO A LA SECCION DE PRODUCTOS");
-		tag14.setBackground(Color.BLACK);
-		tag14.setHorizontalAlignment(SwingConstants.CENTER);
-		tag14.setSize(429, 45);
-		tag14.setFont(new Font("Arial", Font.BOLD, 20));
-		tag14.setForeground(Color.WHITE);
-		tag14.setLocation(229, 36);
-		Crearproducto.add(tag14);
-		//// LOGOS DEL SUPER
-		ImageIcon img11 = new ImageIcon("Logo5.png");
-		JLabel im11 = new JLabel(img11);
-		im11.setHorizontalAlignment(SwingConstants.LEFT);
-		im11.setBounds(42, 25, 177, 172);
-		Image esc11 = img11.getImage().getScaledInstance(im11.getWidth(), im11.getHeight(), Image.SCALE_SMOOTH);
-		Icon ices11 = new ImageIcon(esc11);
-		im11.setIcon(ices11);
-		Crearproducto.add(im11);
-		ImageIcon img12 = new ImageIcon("Logotipo5.png");
-		JLabel im12 = new JLabel(img12);
-		im12.setHorizontalAlignment(SwingConstants.LEFT);
-		im12.setBounds(700, 25, 187, 184);
-		Image esc12 = img12.getImage().getScaledInstance(im12.getWidth(), im12.getHeight(), Image.SCALE_SMOOTH);
-		Icon ices12 = new ImageIcon(esc12);
-		im12.setIcon(ices12);
-		Crearproducto.add(im12);
-		JLabel añadirjl = new JLabel("Añadir");
-		JLabel iconjl = new JLabel("Eliminar");
-		JLabel buscarjl = new JLabel("Buscar");
-		añadirjl.setFont(new Font("Arial", Font.BOLD, 20));
-		iconjl.setFont(new Font("Arial", Font.BOLD, 20));
-		buscarjl.setFont(new Font("Arial", Font.BOLD, 20));
-		añadirjl.setBounds(150, 300, 130, 30);
-		iconjl.setBounds(150, 350, 130, 30);
-		buscarjl.setBounds(150, 400, 130, 30);
-		ImageIcon img13 = new ImageIcon("añadir.png");
-		ImageIcon img14 = new ImageIcon("Icon1.jpg");
-		ImageIcon img15 = new ImageIcon("buscar.jpg");
-		ImageIcon imgRegresar = new ImageIcon("regresar.png");
-
-		JButton añadir = new JButton(img13);
-		añadir.setBounds(100, 300, 30, 30);
-		JButton eliminar = new JButton(img14);
-		eliminar.setBounds(100, 350, 30, 30);
-		JButton buscar = new JButton(img15);
-		buscar.setBounds(100, 400, 30, 30);
-		JButton regresar = new JButton(imgRegresar);
-		regresar.setBounds(700, 400, 100,100);
-		regresar.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				anterior = actual;
-				actual = "Inicio";
-				route();
-			}});
-		Crearproducto.add(buscarjl);
-		Crearproducto.add(añadirjl);
-		Crearproducto.add(iconjl);
-		Crearproducto.add(añadir);
-		Crearproducto.add(eliminar);
-		Crearproducto.add(buscar);
-		Crearproducto.add(regresar);
+		if(subPanelProductos=="loby") {CrearproductoLoby(Crearproducto);}
 		return Crearproducto;
 	}
-	
+						public void CrearproductoLoby(JPanel Crearproducto) 
+						{
+							Crearproducto.removeAll();
+						////// TITULO DE CREAR EMPLEADO
+						////// TITULO DE CREAR COMPRA
+							JLabel tag14 = new JLabel("BIEVENIDO A LA SECCION DE PRODUCTOS");
+							tag14.setBackground(Color.BLACK);
+							tag14.setHorizontalAlignment(SwingConstants.CENTER);
+							tag14.setSize(429, 45);
+							tag14.setFont(new Font("Arial", Font.BOLD, 20));
+							tag14.setForeground(Color.WHITE);
+							tag14.setLocation(229, 36);
+							Crearproducto.add(tag14);
+							//// LOGOS DEL SUPER
+							ImageIcon img11 = new ImageIcon("Logo5.png");
+							JLabel im11 = new JLabel(img11);
+							im11.setHorizontalAlignment(SwingConstants.LEFT);
+							im11.setBounds(42, 25, 177, 172);
+							Image esc11 = img11.getImage().getScaledInstance(im11.getWidth(), im11.getHeight(), Image.SCALE_SMOOTH);
+							Icon ices11 = new ImageIcon(esc11);
+							im11.setIcon(ices11);
+							Crearproducto.add(im11);
+							ImageIcon img12 = new ImageIcon("Logotipo5.png");
+							JLabel im12 = new JLabel(img12);
+							im12.setHorizontalAlignment(SwingConstants.LEFT);
+							im12.setBounds(700, 25, 187, 184);
+							Image esc12 = img12.getImage().getScaledInstance(im12.getWidth(), im12.getHeight(), Image.SCALE_SMOOTH);
+							Icon ices12 = new ImageIcon(esc12);
+							im12.setIcon(ices12);
+							Crearproducto.add(im12);
+							JLabel añadirjl = new JLabel("Añadir");
+							JLabel iconjl = new JLabel("Eliminar");
+							JLabel buscarjl = new JLabel("Buscar");
+							añadirjl.setFont(new Font("Arial", Font.BOLD, 20));
+							iconjl.setFont(new Font("Arial", Font.BOLD, 20));
+							buscarjl.setFont(new Font("Arial", Font.BOLD, 20));
+							añadirjl.setBounds(150, 300, 130, 30);
+							iconjl.setBounds(150, 350, 130, 30);
+							buscarjl.setBounds(150, 400, 130, 30);
+							ImageIcon img13 = new ImageIcon("añadir.png");
+							ImageIcon img14 = new ImageIcon("Icon1.jpg");
+							ImageIcon img15 = new ImageIcon("buscar.jpg");
+							ImageIcon imgRegresar = new ImageIcon("regresar.png");
+
+							JButton añadir = new JButton(img13);
+							añadir.setBounds(100, 300, 30, 30);
+							añadir.addActionListener(new ActionListener() {
+								@Override
+								public void actionPerformed(ActionEvent e) {
+									CrearproductoLobyCrear(Crearproducto);
+									subPanelProductos="crear";
+									frame.repaint();
+								}});
+							JButton eliminar = new JButton(img14);
+							eliminar.setBounds(100, 350, 30, 30);
+							eliminar.addActionListener(new ActionListener() {
+								@Override
+								public void actionPerformed(ActionEvent e) {
+									CrearproductoLobyDel(Crearproducto);
+									subPanelProductos="eliminar";
+									frame.repaint();
+									}});
+							JButton buscar = new JButton(img15);
+							buscar.setBounds(100, 400, 30, 30);
+							buscar.addActionListener(new ActionListener() {
+								@Override
+								public void actionPerformed(ActionEvent e) {
+									CrearproductoLobyBuscar(Crearproducto);
+									subPanelProductos="buscar";
+									frame.repaint();
+								}});
+							JButton regresar = new JButton(imgRegresar);
+							regresar.setBounds(700, 400, 100,100);
+							regresar.addActionListener(new ActionListener() {
+								@Override
+								public void actionPerformed(ActionEvent e) {
+									if(subPanelProductos=="loby") {anterior = actual;
+									actual = "Inicio";
+									route();}
+								}});
+							Crearproducto.add(buscarjl);
+							Crearproducto.add(añadirjl);
+							Crearproducto.add(iconjl);
+							Crearproducto.add(añadir);
+							Crearproducto.add(eliminar);
+							Crearproducto.add(buscar);
+							Crearproducto.add(regresar);
+						}
+						
+						public void CrearproductoLobyCrear(JPanel Crearproducto) 
+						{
+							Crearproducto.removeAll();
+						////// TITULO DE CREAR EMPLEADO
+						////// TITULO DE CREAR COMPRA
+							JLabel tag14 = new JLabel("BIEVENIDO A LA SECCION DE PRODUCTOS");
+							tag14.setBackground(Color.BLACK);
+							tag14.setHorizontalAlignment(SwingConstants.CENTER);
+							tag14.setSize(429, 45);
+							tag14.setFont(new Font("Arial", Font.BOLD, 20));
+							tag14.setForeground(Color.WHITE);
+							tag14.setLocation(229, 36);
+							Crearproducto.add(tag14);
+							//// LOGOS DEL SUPER
+							ImageIcon img11 = new ImageIcon("Logo5.png");
+							JLabel im11 = new JLabel(img11);
+							im11.setHorizontalAlignment(SwingConstants.LEFT);
+							im11.setBounds(42, 25, 177, 172);
+							Image esc11 = img11.getImage().getScaledInstance(im11.getWidth(), im11.getHeight(), Image.SCALE_SMOOTH);
+							Icon ices11 = new ImageIcon(esc11);
+							im11.setIcon(ices11);
+							Crearproducto.add(im11);
+							ImageIcon img12 = new ImageIcon("Logotipo5.png");
+							JLabel im12 = new JLabel(img12);
+							im12.setHorizontalAlignment(SwingConstants.LEFT);
+							im12.setBounds(700, 25, 187, 184);
+							Image esc12 = img12.getImage().getScaledInstance(im12.getWidth(), im12.getHeight(), Image.SCALE_SMOOTH);
+							Icon ices12 = new ImageIcon(esc12);
+							im12.setIcon(ices12);
+							Crearproducto.add(im12);
+							ImageIcon imgRegresar = new ImageIcon("regresar.png");
+							JButton regresar = new JButton(imgRegresar);
+							regresar.setBounds(700, 400, 100,100);
+							regresar.addActionListener(new ActionListener() {
+								@Override
+								public void actionPerformed(ActionEvent e) {
+									if(subPanelProductos=="loby") {anterior = actual;
+									actual = "Inicio";
+									route();}else if(subPanelProductos=="crear") 
+									{
+										CrearproductoLoby(Crearproducto);
+										subPanelProductos="loby";
+										frame.repaint();
+									}
+								}});
+							Crearproducto.add(regresar);
+						}
+						
+						public void CrearproductoLobyDel(JPanel Crearproducto) 
+						{
+							Crearproducto.removeAll();
+						////// TITULO DE CREAR EMPLEADO
+						////// TITULO DE CREAR COMPRA
+							JLabel tag14 = new JLabel("BIEVENIDO A LA SECCION DE PRODUCTOS");
+							tag14.setBackground(Color.BLACK);
+							tag14.setHorizontalAlignment(SwingConstants.CENTER);
+							tag14.setSize(429, 45);
+							tag14.setFont(new Font("Arial", Font.BOLD, 20));
+							tag14.setForeground(Color.WHITE);
+							tag14.setLocation(229, 36);
+							Crearproducto.add(tag14);
+							//// LOGOS DEL SUPER
+							ImageIcon img11 = new ImageIcon("Logo5.png");
+							JLabel im11 = new JLabel(img11);
+							im11.setHorizontalAlignment(SwingConstants.LEFT);
+							im11.setBounds(42, 25, 177, 172);
+							Image esc11 = img11.getImage().getScaledInstance(im11.getWidth(), im11.getHeight(), Image.SCALE_SMOOTH);
+							Icon ices11 = new ImageIcon(esc11);
+							im11.setIcon(ices11);
+							Crearproducto.add(im11);
+							ImageIcon img12 = new ImageIcon("Logotipo5.png");
+							JLabel im12 = new JLabel(img12);
+							im12.setHorizontalAlignment(SwingConstants.LEFT);
+							im12.setBounds(700, 25, 187, 184);
+							Image esc12 = img12.getImage().getScaledInstance(im12.getWidth(), im12.getHeight(), Image.SCALE_SMOOTH);
+							Icon ices12 = new ImageIcon(esc12);
+							im12.setIcon(ices12);
+							Crearproducto.add(im12);
+							ImageIcon imgRegresar = new ImageIcon("regresar.png");
+							JButton regresar = new JButton(imgRegresar);
+							regresar.setBounds(700, 400, 100,100);
+							regresar.addActionListener(new ActionListener() {
+								@Override
+								public void actionPerformed(ActionEvent e) {
+									if(subPanelProductos=="loby") {anterior = actual;
+									actual = "Inicio";
+									route();}else if(subPanelProductos=="eliminar") 
+									{
+										CrearproductoLoby(Crearproducto);
+										subPanelProductos="loby";
+										frame.repaint();
+									}
+								}});
+							Crearproducto.add(regresar);
+						}
+						public void CrearproductoLobyBuscar(JPanel Crearproducto) 
+						{
+							Crearproducto.removeAll();
+						////// TITULO DE CREAR EMPLEADO
+						////// TITULO DE CREAR COMPRA
+							JLabel tag14 = new JLabel("BIEVENIDO A LA SECCION DE PRODUCTOS");
+							tag14.setBackground(Color.BLACK);
+							tag14.setHorizontalAlignment(SwingConstants.CENTER);
+							tag14.setSize(429, 45);
+							tag14.setFont(new Font("Arial", Font.BOLD, 20));
+							tag14.setForeground(Color.WHITE);
+							tag14.setLocation(229, 36);
+							Crearproducto.add(tag14);
+							//// LOGOS DEL SUPER
+							ImageIcon img11 = new ImageIcon("Logo5.png");
+							JLabel im11 = new JLabel(img11);
+							im11.setHorizontalAlignment(SwingConstants.LEFT);
+							im11.setBounds(42, 25, 177, 172);
+							Image esc11 = img11.getImage().getScaledInstance(im11.getWidth(), im11.getHeight(), Image.SCALE_SMOOTH);
+							Icon ices11 = new ImageIcon(esc11);
+							im11.setIcon(ices11);
+							Crearproducto.add(im11);
+							ImageIcon img12 = new ImageIcon("Logotipo5.png");
+							JLabel im12 = new JLabel(img12);
+							im12.setHorizontalAlignment(SwingConstants.LEFT);
+							im12.setBounds(700, 25, 187, 184);
+							Image esc12 = img12.getImage().getScaledInstance(im12.getWidth(), im12.getHeight(), Image.SCALE_SMOOTH);
+							Icon ices12 = new ImageIcon(esc12);
+							im12.setIcon(ices12);
+							Crearproducto.add(im12);
+							ImageIcon imgRegresar = new ImageIcon("regresar.png");
+							JButton regresar = new JButton(imgRegresar);
+							regresar.setBounds(700, 400, 100,100);
+							regresar.addActionListener(new ActionListener() {
+								@Override
+								public void actionPerformed(ActionEvent e) {
+									if(subPanelProductos=="loby") {anterior = actual;
+									actual = "Inicio";
+									route();}else if(subPanelProductos=="buscar") 
+									{
+										CrearproductoLoby(Crearproducto);
+										subPanelProductos="loby";
+										frame.repaint();
+									}
+								}});
+							Crearproducto.add(regresar);
+						}
 	public void route() {
 
 		if(gran_panel!=null) {
