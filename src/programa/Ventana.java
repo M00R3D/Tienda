@@ -19,6 +19,11 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.awt.event.ActionEvent;
 
 import javax.swing.JFrame;
@@ -26,6 +31,11 @@ import java.awt.CardLayout;
 
 public class Ventana {
 
+	private static final String CONTROLADOR = "com.mysql.jdbc.Driver";
+    private static final String URL = "jdbc:mysql://localhost:3306/pruebita";
+    private static final String USUARIO = "root";
+    private static final String CLAVE = "";
+	
 	private JFrame frame;
 	private Main main;
 	private JPanel gran_panel;
@@ -1063,6 +1073,40 @@ public class Ventana {
 
 	public void CrearempleadoBuscar(JPanel Crearempleado) {
 		Crearempleado.removeAll();
+		
+		try {
+            Connection conexion = conectar();
+            Statement statement = conexion.createStatement();
+            String query = "SELECT * FROM empleados";
+            ResultSet resultSet = statement.executeQuery(query);
+            int contadorY=0;
+            while (resultSet.next()) {
+                int cedula = resultSet.getInt("Cedula");
+                String nombre = resultSet.getString("Nombre");
+                String apellido = resultSet.getString("Apellido");
+                String direccion = resultSet.getString("Direccion");
+                String cargo = resultSet.getString("Cargo");
+                int telefono = resultSet.getInt("Telefono");
+                String StrEmpleado=("Cedula: " + cedula+"  Nombre: " + nombre+"  Apellido: " + apellido+
+                		"  Direccion: " + direccion+"	  Cargo: " + cargo+"  Telefono: " + telefono);
+                JLabel labelAux= new JLabel(StrEmpleado);
+                labelAux.setBounds(140,140+(contadorY*40),800,20);
+                labelAux.setOpaque(true);
+                labelAux.setBackground(Color.white);
+                contadorY++;
+                Crearempleado.add(labelAux);
+                System.out.println(StrEmpleado);
+            }
+
+            conexion.close();
+
+        } catch (SQLException e) {
+            System.out.println("Error en la conexión");
+            e.printStackTrace();
+        }
+
+		
+		
 		////// TITULO DE CREAR EMPLEADO
 		JLabel tag13 = new JLabel("BIEVENIDO A LA SESION DE EMPLEADO");
 		tag13.setBackground(Color.BLACK);
@@ -1108,6 +1152,9 @@ public class Ventana {
 				}
 			}
 		});
+		
+		
+		
 		Crearempleado.add(regresar);
 	}
 
@@ -1453,5 +1500,19 @@ public class Ventana {
 		frame.revalidate();
 		frame.repaint();
 	}
-
+	public Connection conectar() {
+        Connection conexion = null;
+        try {
+            Class.forName(CONTROLADOR);
+            conexion = DriverManager.getConnection(URL, USUARIO, CLAVE);
+            System.out.println("Conexión OK");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Error al cargar el controlador");
+            e.printStackTrace();
+        } catch (SQLException e) {
+            System.out.println("Error en la conexión");
+            e.printStackTrace();
+        }
+        return conexion;
+    }
 }
