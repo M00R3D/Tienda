@@ -353,6 +353,21 @@ public class Ventana {
 		Icon ices8 = new ImageIcon(esc8);
 		im8.setIcon(ices8);
 		Crearprovedor.add(im8);
+		JLabel añadirjl = new JLabel("Añadir");
+		JLabel iconjl = new JLabel("Eliminar");
+		JLabel buscarjl = new JLabel("Buscar");
+		añadirjl.setBounds(150, 300, 130, 30);
+		iconjl.setBounds(150, 350, 130, 30);
+		buscarjl.setBounds(150, 400, 130, 30);
+		ImageIcon img13 = new ImageIcon("añadir.png");
+		ImageIcon img14 = new ImageIcon("Icon1.jpg");
+		ImageIcon img15 = new ImageIcon("buscar.jpg");
+		JButton añadir = new JButton(img13);
+		añadir.setBounds(100, 300, 30, 30);
+		JButton eliminar = new JButton(img14);
+		eliminar.setBounds(100, 350, 30, 30);
+		JButton buscar = new JButton(img15);
+		buscar.setBounds(100, 400, 30, 30);
 		JButton regresar = new JButton("regresar");
 		regresar.setBounds(700, 400, 206, 35);
 		regresar.addActionListener(new ActionListener() {
@@ -362,6 +377,12 @@ public class Ventana {
 				actual = "Inicio";
 				route();
 			}});
+		Crearprovedor.add(añadirjl);
+		Crearprovedor.add(iconjl);
+		Crearprovedor.add(buscarjl);
+		Crearprovedor.add(añadir);
+		Crearprovedor.add(eliminar);
+		Crearprovedor.add(buscar );
 		Crearprovedor.add(regresar);
 		return Crearprovedor;
 	}
@@ -398,6 +419,21 @@ public class Ventana {
 		Icon ices10 = new ImageIcon(esc10);
 		im10.setIcon(ices10);
 		Crearempleado.add(im10);
+		JLabel añadirjl = new JLabel("Añadir");
+		JLabel iconjl = new JLabel("Eliminar");
+		JLabel buscarjl = new JLabel("Buscar");
+		añadirjl.setBounds(150, 300, 130, 30);
+		iconjl.setBounds(150, 350, 130, 30);
+		buscarjl.setBounds(150, 400, 130, 30);
+		ImageIcon img13 = new ImageIcon("añadir.png");
+		ImageIcon img14 = new ImageIcon("Icon1.jpg");
+		ImageIcon img15 = new ImageIcon("buscar.jpg");
+		JButton añadir = new JButton(img13);
+		añadir.setBounds(100, 300, 30, 30);
+		JButton eliminar = new JButton(img14);
+		eliminar.setBounds(100, 350, 30, 30);
+		JButton buscar = new JButton(img15);
+		buscar.setBounds(100, 400, 30, 30);
 		JButton regresar = new JButton("regresar");
 		regresar.setBounds(700, 400, 206, 35);
 		regresar.addActionListener(new ActionListener() {
@@ -407,18 +443,26 @@ public class Ventana {
 				actual = "Inicio";
 				route();
 			}});
+		Crearempleado.add(añadirjl);
+		Crearempleado.add(buscarjl);
+		Crearempleado.add(iconjl);
 		Crearempleado.add(regresar);
+		Crearempleado.add(añadir);
+		Crearempleado.add(eliminar);
+		Crearempleado.add(buscar);
 		return Crearempleado;
 	}
 	
 	public JPanel Crearproducto() 
 	{
+//		String subpanel="loby";
+		
 		JPanel Crearproducto = new JPanel();
 		Crearproducto.setBackground(Color.RED);
 		frame.getContentPane().add(Crearproducto, "name_389654242683100");
 		Crearproducto.setLayout(null);
 		////// TITULO DE CREAR COMPRA
-		JLabel tag14 = new JLabel("BIEVENIDO A LA SESION DE COMPRAS");
+		JLabel tag14 = new JLabel("BIEVENIDO A LA SECCION DE PRODUCTOS");
 		tag14.setBackground(Color.BLACK);
 		tag14.setHorizontalAlignment(SwingConstants.CENTER);
 		tag14.setSize(429, 45);
@@ -443,6 +487,21 @@ public class Ventana {
 		Icon ices12 = new ImageIcon(esc12);
 		im12.setIcon(ices12);
 		Crearproducto.add(im12);
+		JLabel añadirjl = new JLabel("Añadir");
+		JLabel iconjl = new JLabel("Eliminar");
+		JLabel buscarjl = new JLabel("Buscar");
+		añadirjl.setBounds(150, 300, 130, 30);
+		iconjl.setBounds(150, 350, 130, 30);
+		buscarjl.setBounds(150, 400, 130, 30);
+		ImageIcon img13 = new ImageIcon("añadir.png");
+		ImageIcon img14 = new ImageIcon("Icon1.jpg");
+		ImageIcon img15 = new ImageIcon("buscar.jpg");
+		JButton añadir = new JButton(img13);
+		añadir.setBounds(100, 300, 30, 30);
+		JButton eliminar = new JButton(img14);
+		eliminar.setBounds(100, 350, 30, 30);
+		JButton buscar = new JButton(img15);
+		buscar.setBounds(100, 400, 30, 30);
 		JButton regresar = new JButton("regresar");
 		regresar.setBounds(700, 400, 206, 35);
 		regresar.addActionListener(new ActionListener() {
@@ -452,6 +511,12 @@ public class Ventana {
 				actual = "Inicio";
 				route();
 			}});
+		Crearproducto.add(buscarjl);
+		Crearproducto.add(añadirjl);
+		Crearproducto.add(iconjl);
+		Crearproducto.add(añadir);
+		Crearproducto.add(eliminar);
+		Crearproducto.add(buscar);
 		Crearproducto.add(regresar);
 		return Crearproducto;
 	}
