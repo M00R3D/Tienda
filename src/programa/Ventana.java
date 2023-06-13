@@ -1,6 +1,7 @@
 package programa;
 
 import java.awt.EventQueue;
+import java.util.Random;
 
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -11,6 +12,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+
+import com.mysql.jdbc.PreparedStatement;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -949,29 +952,29 @@ public class Ventana {
 		tag4.setFont(new Font("comic sans", Font.BOLD, 15));
 		tag4.setForeground(Color.white);
 
-		JTextField mail9 = new JTextField();
-		mail9.setBounds(300, 223, 210, 26);
-		Crearempleado.add(mail9);
+		JTextField tfApellido = new JTextField();
+		tfApellido.setBounds(300, 223, 210, 26);
+		Crearempleado.add(tfApellido);
 
-		mail9.setFont(new Font("Comic sans ", Font.ITALIC, 15));
+		tfApellido.setFont(new Font("Comic sans ", Font.ITALIC, 15));
 
-		JTextField mail1 = new JTextField();
-		mail1.setBounds(300, 160, 210, 31);
-		Crearempleado.add(mail1);
+		JTextField tfNombre = new JTextField();
+		tfNombre.setBounds(300, 160, 210, 31);
+		Crearempleado.add(tfNombre);
 
-		mail1.setFont(new Font("Comic sans ", Font.ITALIC, 15));
+		tfNombre.setFont(new Font("Comic sans ", Font.ITALIC, 15));
 
-		JTextField mail12 = new JTextField();
-		mail12.setBounds(300, 298, 210, 32);
-		Crearempleado.add(mail12);
+		JTextField tfNumero = new JTextField();
+		tfNumero.setBounds(300,298, 210, 32);
+		Crearempleado.add(tfNumero);
 
-		mail12.setFont(new Font("Comic sans ", Font.ITALIC, 15));
+		tfNumero.setFont(new Font("Comic sans ", Font.ITALIC, 15));
 
-		JTextField mail13 = new JTextField();
-		mail13.setBounds(300, 370, 210, 32);
-		Crearempleado.add(mail13);
+		JTextField tfDireccion = new JTextField();
+		tfDireccion.setBounds(300,370  , 210, 32);
+		Crearempleado.add(tfDireccion);
 
-		mail13.setFont(new Font("Comic sans ", Font.ITALIC, 15));
+		tfDireccion.setFont(new Font("Comic sans ", Font.ITALIC, 15));
 
 		JButton cancelar = new JButton("CANCELAR");
 		cancelar.setSize(132, 60);
@@ -986,6 +989,37 @@ public class Ventana {
 		jbnAccess.setForeground(Color.decode("#FFFFFF"));
 		jbnAccess.setBackground(Color.decode("#4491F4"));
 		Crearempleado.add(jbnAccess);
+		
+		jbnAccess.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+		            Connection conexion = conectar();
+		            String query = "INSERT INTO empleados (Cedula, Nombre, Apellido, Direccion, Cargo, Telefono) VALUES (?, ?, ?, ?, ?, ?)";
+		            PreparedStatement statement = (PreparedStatement) conexion.prepareStatement(query);
+		            Random random = new Random();
+		            int key=( (999999999)* (random.nextInt() * (999999999 - 0 + 1)));
+		            statement.setInt(1, key);
+		            statement.setString(2, tfNombre.getText());
+		            statement.setString(3, tfApellido.getText());
+		            statement.setString(4, tfDireccion.getText());
+		            statement.setString(5, "Cajero");
+		            statement.setString(6,tfNumero.getText());
+		            int filasAfectadas = statement.executeUpdate();
+
+		            if (filasAfectadas > 0) {
+		                System.out.println("Empleado agregado exitosamente");
+		            } else {
+		                System.out.println("Error al agregar el empleado");
+		            }
+
+		            conexion.close();
+
+		        } catch (SQLException e1) {
+		            System.out.println("Error en la conexión");
+		            e1.printStackTrace();
+		        }
+			}});
 	
 		ImageIcon img9 = new ImageIcon("Logo4.png");
 		JLabel im9 = new JLabel(img9);
@@ -1051,8 +1085,48 @@ public class Ventana {
 		Icon ices10 = new ImageIcon(esc10);
 		im10.setIcon(ices10);
 		Crearempleado.add(im10);
+		JLabel IngreseNombre = new JLabel("Ingrese el nombre del empleado a Eliminar: ");
+		IngreseNombre.setBounds(300, 120, 358, 18);
+		Crearempleado.add(IngreseNombre);
+		IngreseNombre.setFont(new Font("Arial", Font.BOLD, 15));
+		IngreseNombre.setForeground(Color.white);
+		Crearempleado.add(IngreseNombre);
+		JTextField tfNombre = new JTextField();
+		tfNombre.setBounds(300, 160, 210, 31);
+		Crearempleado.add(tfNombre);
 		ImageIcon imgRegresar = new ImageIcon("regresar.png");
 		JButton regresar = new JButton(imgRegresar);
+		JButton jbnDel = new JButton("ELIMINAR");
+		jbnDel.setSize(122, 60);
+		jbnDel.setLocation(420, 424);
+		jbnDel.setForeground(Color.decode("#FFFFFF"));
+		jbnDel.setBackground(Color.red);
+		Crearempleado.add(jbnDel);
+		
+		jbnDel.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+		            Connection conexion = conectar();
+		            String query = "DELETE FROM empleados WHERE Nombre = ?";
+		            PreparedStatement statement = (PreparedStatement) conexion.prepareStatement(query);
+		            statement.setString(1, tfNombre.getText());
+		            int filasAfectadas = statement.executeUpdate();
+
+		            if (filasAfectadas > 0) {
+		                System.out.println("Empleado eliminado exitosamente");
+		            } else {
+		                System.out.println("Error al eliminar el empleado");
+		            }
+
+		            conexion.close();
+
+		        } catch (SQLException e1) {
+		            System.out.println("Error en la conexión");
+		            e1.printStackTrace();
+		        }			}});
+		
+		
 		regresar.setBounds(700, 400, 100, 100);
 		regresar.addActionListener(new ActionListener() {
 			@Override
@@ -1086,7 +1160,7 @@ public class Ventana {
                 String apellido = resultSet.getString("Apellido");
                 String direccion = resultSet.getString("Direccion");
                 String cargo = resultSet.getString("Cargo");
-                int telefono = resultSet.getInt("Telefono");
+                String telefono = resultSet.getString("Telefono");
                 String StrEmpleado=("Cedula: " + cedula+"  Nombre: " + nombre+"  Apellido: " + apellido+
                 		"  Direccion: " + direccion+"	  Cargo: " + cargo+"  Telefono: " + telefono);
                 JLabel labelAux= new JLabel(StrEmpleado);
