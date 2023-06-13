@@ -88,20 +88,20 @@ public class Ventana {
 		frame.getContentPane().add(Inicio, "name_389654173536400");
 		Inicio.setLayout(null);
 		// NOMBRE DEL SUPERMERCADO
-		JLabel tag1 = new JLabel("Super Mercado Del multiverse");
-		tag1.setBackground(Color.BLACK);
-		tag1.setHorizontalAlignment(SwingConstants.CENTER);
-		tag1.setSize(312, 42);
-		tag1.setFont(new Font("Arial", Font.BOLD, 20));
-		tag1.setForeground(Color.RED);
-		tag1.setLocation(282, 11);
-		Inicio.add(tag1);
+		JLabel tagProveedor = new JLabel("Super Mercado Del multiverse");
+		tagProveedor.setBackground(Color.BLACK);
+		tagProveedor.setHorizontalAlignment(SwingConstants.CENTER);
+		tagProveedor.setSize(312, 42);
+		tagProveedor.setFont(new Font("Arial", Font.BOLD, 20));
+		tagProveedor.setForeground(Color.RED);
+		tagProveedor.setLocation(282, 11);
+		Inicio.add(tagProveedor);
 		// DIRECCION DEL SUPER MERCADO
 		JLabel tag2 = new JLabel("Direccion : pico de orizaba y santa alicia ");
 		tag2.setSize(443, 36);
 		tag2.setBackground(Color.BLACK);
 		tag2.setHorizontalAlignment(SwingConstants.CENTER);
-		tag1.setSize(312, 75);
+		tagProveedor.setSize(312, 75);
 		tag2.setFont(new Font("Arial", Font.BOLD, 20));
 		tag2.setForeground(Color.RED);
 		tag2.setLocation(214, 65);
@@ -116,24 +116,24 @@ public class Ventana {
 		tag3.setLocation(225, 112);
 		Inicio.add(tag3);
 		// CODIGO POSTAL DEL SUPER
-		JLabel tag4 = new JLabel("Codigo Postal: 23080");
-		tag4.setBackground(Color.BLACK);
-		tag4.setHorizontalAlignment(SwingConstants.CENTER);
-		tag4.setSize(312, 24);
-		tag4.setFont(new Font("Arial", Font.BOLD, 20));
-		tag4.setForeground(Color.RED);
-		tag4.setLocation(282, 157);
-		Inicio.add(tag4);
+		JLabel tagProducto = new JLabel("Codigo Postal: 23080");
+		tagProducto.setBackground(Color.BLACK);
+		tagProducto.setHorizontalAlignment(SwingConstants.CENTER);
+		tagProducto.setSize(312, 24);
+		tagProducto.setFont(new Font("Arial", Font.BOLD, 20));
+		tagProducto.setForeground(Color.RED);
+		tagProducto.setLocation(282, 157);
+		Inicio.add(tagProducto);
 
 		// TITULO DE ORDEN DEL PEDIDO
-		JLabel tag6 = new JLabel("ORDEN DEL PEDIDO");
-		tag6.setBackground(Color.BLACK);
-		tag6.setHorizontalAlignment(SwingConstants.CENTER);
-		tag6.setSize(312, 24);
-		tag6.setFont(new Font("Arial", Font.BOLD, 20));
-		tag6.setForeground(Color.RED);
-		tag6.setLocation(80, 234);
-		Inicio.add(tag6);
+		JLabel tagCodigo = new JLabel("ORDEN DEL PEDIDO");
+		tagCodigo.setBackground(Color.BLACK);
+		tagCodigo.setHorizontalAlignment(SwingConstants.CENTER);
+		tagCodigo.setSize(312, 24);
+		tagCodigo.setFont(new Font("Arial", Font.BOLD, 20));
+		tagCodigo.setForeground(Color.RED);
+		tagCodigo.setLocation(80, 234);
+		Inicio.add(tagCodigo);
 		// TITULO DEL PROVEDOR
 		JLabel tag7 = new JLabel("PROVEDOR");
 		tag7.setBackground(Color.BLACK);
@@ -245,14 +245,14 @@ public class Ventana {
 
 	public void CrearpedidoLoby(JPanel Crearpedido) {
 		Crearpedido.removeAll();
-		JLabel tag11 = new JLabel("BIENVENIDO A LA SESION DE PEDIDOS");
-		tag11.setBackground(Color.BLACK);
-		tag11.setHorizontalAlignment(SwingConstants.CENTER);
-		tag11.setSize(454, 45);
-		tag11.setFont(new Font("Arial", Font.BOLD, 20));
-		tag11.setForeground(Color.PINK);
-		tag11.setLocation(208, 41);
-		Crearpedido.add(tag11);
+		JLabel tagProveedor1 = new JLabel("BIENVENIDO A LA SESION DE PEDIDOS");
+		tagProveedor1.setBackground(Color.BLACK);
+		tagProveedor1.setHorizontalAlignment(SwingConstants.CENTER);
+		tagProveedor1.setSize(454, 45);
+		tagProveedor1.setFont(new Font("Arial", Font.BOLD, 20));
+		tagProveedor1.setForeground(Color.PINK);
+		tagProveedor1.setLocation(208, 41);
+		Crearpedido.add(tagProveedor1);
 		ImageIcon img5 = new ImageIcon("Logo2.png");
 		JLabel im5 = new JLabel(img5);
 		im5.setHorizontalAlignment(SwingConstants.LEFT);
@@ -360,14 +360,14 @@ public class Ventana {
 
 	public void CrearpedidoCrear(JPanel Crearpedido) {
 		Crearpedido.removeAll();
-		JLabel tag11 = new JLabel("BIENVENIDO A LA SESION DE PEDIDOS");
-		tag11.setBackground(Color.BLACK);
-		tag11.setHorizontalAlignment(SwingConstants.CENTER);
-		tag11.setSize(454, 45);
-		tag11.setFont(new Font("Arial", Font.BOLD, 20));
-		tag11.setForeground(Color.PINK);
-		tag11.setLocation(208, 41);
-		Crearpedido.add(tag11);
+		JLabel tagProveedor1 = new JLabel("BIENVENIDO A LA SESION DE PEDIDOS");
+		tagProveedor1.setBackground(Color.BLACK);
+		tagProveedor1.setHorizontalAlignment(SwingConstants.CENTER);
+		tagProveedor1.setSize(454, 45);
+		tagProveedor1.setFont(new Font("Arial", Font.BOLD, 20));
+		tagProveedor1.setForeground(Color.PINK);
+		tagProveedor1.setLocation(208, 41);
+		Crearpedido.add(tagProveedor1);
 		ImageIcon img5 = new ImageIcon("Logo2.png");
 		JLabel im5 = new JLabel(img5);
 		im5.setHorizontalAlignment(SwingConstants.LEFT);
@@ -406,14 +406,14 @@ public class Ventana {
 
 	public void CrearpedidoDel(JPanel Crearpedido) {
 		Crearpedido.removeAll();
-		JLabel tag11 = new JLabel("BIENVENIDO A LA SESION DE PEDIDOS");
-		tag11.setBackground(Color.BLACK);
-		tag11.setHorizontalAlignment(SwingConstants.CENTER);
-		tag11.setSize(454, 45);
-		tag11.setFont(new Font("Arial", Font.BOLD, 20));
-		tag11.setForeground(Color.PINK);
-		tag11.setLocation(208, 41);
-		Crearpedido.add(tag11);
+		JLabel tagProveedor1 = new JLabel("BIENVENIDO A LA SESION DE PEDIDOS");
+		tagProveedor1.setBackground(Color.BLACK);
+		tagProveedor1.setHorizontalAlignment(SwingConstants.CENTER);
+		tagProveedor1.setSize(454, 45);
+		tagProveedor1.setFont(new Font("Arial", Font.BOLD, 20));
+		tagProveedor1.setForeground(Color.PINK);
+		tagProveedor1.setLocation(208, 41);
+		Crearpedido.add(tagProveedor1);
 		ImageIcon img5 = new ImageIcon("Logo2.png");
 		JLabel im5 = new JLabel(img5);
 		im5.setHorizontalAlignment(SwingConstants.LEFT);
@@ -452,14 +452,14 @@ public class Ventana {
 
 	public void CrearpedidoBus(JPanel Crearpedido) {
 		Crearpedido.removeAll();
-		JLabel tag11 = new JLabel("BIENVENIDO A LA SESION DE PEDIDOS");
-		tag11.setBackground(Color.BLACK);
-		tag11.setHorizontalAlignment(SwingConstants.CENTER);
-		tag11.setSize(454, 45);
-		tag11.setFont(new Font("Arial", Font.BOLD, 20));
-		tag11.setForeground(Color.PINK);
-		tag11.setLocation(208, 41);
-		Crearpedido.add(tag11);
+		JLabel tagProveedor1 = new JLabel("BIENVENIDO A LA SESION DE PEDIDOS");
+		tagProveedor1.setBackground(Color.BLACK);
+		tagProveedor1.setHorizontalAlignment(SwingConstants.CENTER);
+		tagProveedor1.setSize(454, 45);
+		tagProveedor1.setFont(new Font("Arial", Font.BOLD, 20));
+		tagProveedor1.setForeground(Color.PINK);
+		tagProveedor1.setLocation(208, 41);
+		Crearpedido.add(tagProveedor1);
 		ImageIcon img5 = new ImageIcon("Logo2.png");
 		JLabel im5 = new JLabel(img5);
 		im5.setHorizontalAlignment(SwingConstants.LEFT);
@@ -510,14 +510,14 @@ public class Ventana {
 	public void CrearprovedorLoby(JPanel Crearprovedor) {
 		Crearprovedor.removeAll();
 		////// TITULO DE CREAR PERSONA
-		JLabel tag12 = new JLabel("BIENVENIDO A LA SESION DE PEDIDO");
-		tag12.setBackground(Color.BLACK);
-		tag12.setHorizontalAlignment(SwingConstants.CENTER);
-		tag12.setSize(387, 45);
-		tag12.setFont(new Font("Arial", Font.BOLD, 20));
-		tag12.setForeground(Color.WHITE);
-		tag12.setLocation(245, 35);
-		Crearprovedor.add(tag12);
+		JLabel tagProveedor2 = new JLabel("BIENVENIDO A LA SESION DE PROVEEDORES");
+		tagProveedor2.setBackground(Color.BLACK);
+		tagProveedor2.setHorizontalAlignment(SwingConstants.CENTER);
+		tagProveedor2.setSize(387, 45);
+		tagProveedor2.setFont(new Font("Arial", Font.BOLD, 20));
+		tagProveedor2.setForeground(Color.WHITE);
+		tagProveedor2.setLocation(245, 35);
+		Crearprovedor.add(tagProveedor2);
 		//// LOGOS DEL SUPER
 		ImageIcon img7 = new ImageIcon("Logo3.png");
 		JLabel im7 = new JLabel(img7);
@@ -602,63 +602,63 @@ public class Ventana {
 	public void CrearprovedorCrear(JPanel Crearprovedor) {
 		Crearprovedor.removeAll();
 		////// TITULO DE CREAR PERSONA
-		JLabel tag12 = new JLabel("BIENVENIDO A LA SESION DE PEDIDO");
-		tag12.setBackground(Color.BLACK);
-		tag12.setHorizontalAlignment(SwingConstants.CENTER);
-		tag12.setSize(387, 45);
-		tag12.setFont(new Font("Arial", Font.BOLD, 20));
-		tag12.setForeground(Color.WHITE);
-		tag12.setLocation(245, 35);
-		Crearprovedor.add(tag12);
+		JLabel tagProveedor2 = new JLabel("BIENVENIDO A LA SESION DE PEDIDO");
+		tagProveedor2.setBackground(Color.BLACK);
+		tagProveedor2.setHorizontalAlignment(SwingConstants.CENTER);
+		tagProveedor2.setSize(387, 45);
+		tagProveedor2.setFont(new Font("Arial", Font.BOLD, 20));
+		tagProveedor2.setForeground(Color.WHITE);
+		tagProveedor2.setLocation(245, 35);
+		Crearprovedor.add(tagProveedor2);
 
 		//// LOGOS DEL SUPER
-		JLabel tag6 = new JLabel("Ingrese su Dirrecion: ");
-		tag6.setBounds(300, 345, 358, 18);
-		Crearprovedor.add(tag6);
-		tag6.setFont(new Font("Arial", Font.BOLD, 15));
-		tag6.setForeground(Color.white);
+		JLabel tagCodigo = new JLabel("Ingrese su Dirrecion: ");
+		tagCodigo.setBounds(300, 345, 358, 18);
+		Crearprovedor.add(tagCodigo);
+		tagCodigo.setFont(new Font("Arial", Font.BOLD, 15));
+		tagCodigo.setForeground(Color.white);
 
-		JLabel tag1 = new JLabel("Ingrese Sus Apellidos: ");
-		tag1.setBounds(300, 202, 302, 20);
-		Crearprovedor.add(tag1);
-		tag1.setFont(new Font("comic sans", Font.BOLD, 15));
-		tag1.setForeground(Color.white);
+		JLabel tagProveedor = new JLabel("Ingrese Sus Apellidos: ");
+		tagProveedor.setBounds(300, 202, 302, 20);
+		Crearprovedor.add(tagProveedor);
+		tagProveedor.setFont(new Font("comic sans", Font.BOLD, 15));
+		tagProveedor.setForeground(Color.white);
 
-		JLabel tag5 = new JLabel("Ingrese El Nombre De La Empresa ");
-		tag5.setBounds(300, 269, 250, 18);
-		Crearprovedor.add(tag5);
-		tag5.setFont(new Font("Arial", Font.BOLD, 15));
-		tag5.setForeground(Color.white);
+		JLabel tagFecha = new JLabel("Ingrese El Nombre De La Empresa ");
+		tagFecha.setBounds(300, 269, 250, 18);
+		Crearprovedor.add(tagFecha);
+		tagFecha.setFont(new Font("Arial", Font.BOLD, 15));
+		tagFecha.setForeground(Color.white);
 
-		JLabel tag4 = new JLabel("Ingrese Su Nombre:");
-		tag4.setBounds(300, 125, 193, 20);
-		Crearprovedor.add(tag4);
-		tag4.setFont(new Font("comic sans", Font.BOLD, 15));
-		tag4.setForeground(Color.white);
+		JLabel tagProducto = new JLabel("Ingrese Su Nombre:");
+		tagProducto.setBounds(300, 125, 193, 20);
+		Crearprovedor.add(tagProducto);
+		tagProducto.setFont(new Font("comic sans", Font.BOLD, 15));
+		tagProducto.setForeground(Color.white);
 
-		JTextField mail9 = new JTextField();
-		mail9.setBounds(300, 223, 210, 26);
-		Crearprovedor.add(mail9);
+		JTextField tfProveedor = new JTextField();
+		tfProveedor.setBounds(300, 223, 210, 26);
+		Crearprovedor.add(tfProveedor);
 
-		mail9.setFont(new Font("Comic sans ", Font.ITALIC, 15));
+		tfProveedor.setFont(new Font("Comic sans ", Font.ITALIC, 15));
 
-		JTextField mail1 = new JTextField();
-		mail1.setBounds(300, 160, 210, 31);
-		Crearprovedor.add(mail1);
+		JTextField tfNombre = new JTextField();
+		tfNombre.setBounds(300, 160, 210, 31);
+		Crearprovedor.add(tfNombre);
 
-		mail1.setFont(new Font("Comic sans ", Font.ITALIC, 15));
+		tfNombre.setFont(new Font("Comic sans ", Font.ITALIC, 15));
 
-		JTextField mail12 = new JTextField();
-		mail12.setBounds(300, 298, 210, 32);
-		Crearprovedor.add(mail12);
+		JTextField tfCodigo = new JTextField();
+		tfCodigo.setBounds(300, 298, 210, 32);
+		Crearprovedor.add(tfCodigo);
 
-		mail12.setFont(new Font("Comic sans ", Font.ITALIC, 15));
+		tfCodigo.setFont(new Font("Comic sans ", Font.ITALIC, 15));
 
-		JTextField mail13 = new JTextField();
-		mail13.setBounds(300, 370, 210, 32);
-		Crearprovedor.add(mail13);
+		JTextField tfFecha = new JTextField();
+		tfFecha.setBounds(300, 370, 210, 32);
+		Crearprovedor.add(tfFecha);
 
-		mail13.setFont(new Font("Comic sans ", Font.ITALIC, 15));
+		tfFecha.setFont(new Font("Comic sans ", Font.ITALIC, 15));
 
 		JButton cancelar = new JButton("CANCELAR");
 		cancelar.setSize(132, 60);
@@ -717,14 +717,14 @@ public class Ventana {
 	public void CrearprovedorDel(JPanel Crearprovedor) {
 		Crearprovedor.removeAll();
 		////// TITULO DE CREAR PERSONA
-		JLabel tag12 = new JLabel("BIENVENIDO A LA SESION DE PEDIDO");
-		tag12.setBackground(Color.BLACK);
-		tag12.setHorizontalAlignment(SwingConstants.CENTER);
-		tag12.setSize(387, 45);
-		tag12.setFont(new Font("Arial", Font.BOLD, 20));
-		tag12.setForeground(Color.WHITE);
-		tag12.setLocation(245, 35);
-		Crearprovedor.add(tag12);
+		JLabel tagProveedor2 = new JLabel("BIENVENIDO A LA SESION DE PEDIDO");
+		tagProveedor2.setBackground(Color.BLACK);
+		tagProveedor2.setHorizontalAlignment(SwingConstants.CENTER);
+		tagProveedor2.setSize(387, 45);
+		tagProveedor2.setFont(new Font("Arial", Font.BOLD, 20));
+		tagProveedor2.setForeground(Color.WHITE);
+		tagProveedor2.setLocation(245, 35);
+		Crearprovedor.add(tagProveedor2);
 		//// LOGOS DEL SUPER
 		ImageIcon img7 = new ImageIcon("Logo3.png");
 		JLabel im7 = new JLabel(img7);
@@ -765,14 +765,14 @@ public class Ventana {
 	public void CrearprovedorBuscar(JPanel Crearprovedor) {
 		Crearprovedor.removeAll();
 		////// TITULO DE CREAR PERSONA
-		JLabel tag12 = new JLabel("BIENVENIDO A LA SESION DE PEDIDO");
-		tag12.setBackground(Color.BLACK);
-		tag12.setHorizontalAlignment(SwingConstants.CENTER);
-		tag12.setSize(387, 45);
-		tag12.setFont(new Font("Arial", Font.BOLD, 20));
-		tag12.setForeground(Color.WHITE);
-		tag12.setLocation(245, 35);
-		Crearprovedor.add(tag12);
+		JLabel tagProveedor2 = new JLabel("BIENVENIDO A LA SESION DE PEDIDO");
+		tagProveedor2.setBackground(Color.BLACK);
+		tagProveedor2.setHorizontalAlignment(SwingConstants.CENTER);
+		tagProveedor2.setSize(387, 45);
+		tagProveedor2.setFont(new Font("Arial", Font.BOLD, 20));
+		tagProveedor2.setForeground(Color.WHITE);
+		tagProveedor2.setLocation(245, 35);
+		Crearprovedor.add(tagProveedor2);
 		//// LOGOS DEL SUPER
 		ImageIcon img7 = new ImageIcon("Logo3.png");
 		JLabel im7 = new JLabel(img7);
@@ -824,14 +824,14 @@ public class Ventana {
 	public void CrearempleadoLoby(JPanel Crearempleado) {
 		Crearempleado.removeAll();
 		////// TITULO DE CREAR EMPLEADO
-		JLabel tag13 = new JLabel("BIEVENIDO A LA SESION DE EMPLEADO");
-		tag13.setBackground(Color.BLACK);
-		tag13.setHorizontalAlignment(SwingConstants.CENTER);
-		tag13.setSize(429, 45);
-		tag13.setFont(new Font("Arial", Font.BOLD, 20));
-		tag13.setForeground(Color.WHITE);
-		tag13.setLocation(229, 36);
-		Crearempleado.add(tag13);
+		JLabel tagProveedor3 = new JLabel("BIEVENIDO A LA SESION DE EMPLEADO");
+		tagProveedor3.setBackground(Color.BLACK);
+		tagProveedor3.setHorizontalAlignment(SwingConstants.CENTER);
+		tagProveedor3.setSize(429, 45);
+		tagProveedor3.setFont(new Font("Arial", Font.BOLD, 20));
+		tagProveedor3.setForeground(Color.WHITE);
+		tagProveedor3.setLocation(229, 36);
+		Crearempleado.add(tagProveedor3);
 		//// LOGOS DEL SUPER
 		ImageIcon img9 = new ImageIcon("Logo4.png");
 		JLabel im9 = new JLabel(img9);
@@ -916,41 +916,41 @@ public class Ventana {
 	public void CrearempleadoCrear(JPanel Crearempleado) {
 		Crearempleado.removeAll();
 		////// TITULO DE CREAR EMPLEADO
-		JLabel tag13 = new JLabel("BIEVENIDO A LA SESION DE EMPLEADO");
-		tag13.setBackground(Color.BLACK);
-		tag13.setHorizontalAlignment(SwingConstants.CENTER);
-		tag13.setSize(429, 45);
-		tag13.setFont(new Font("Arial", Font.BOLD, 20));
-		tag13.setForeground(Color.WHITE);
-		tag13.setLocation(229, 36);
-		Crearempleado.add(tag13);
+		JLabel tagProveedor3 = new JLabel("BIEVENIDO A LA SESION DE EMPLEADO");
+		tagProveedor3.setBackground(Color.BLACK);
+		tagProveedor3.setHorizontalAlignment(SwingConstants.CENTER);
+		tagProveedor3.setSize(429, 45);
+		tagProveedor3.setFont(new Font("Arial", Font.BOLD, 20));
+		tagProveedor3.setForeground(Color.WHITE);
+		tagProveedor3.setLocation(229, 36);
+		Crearempleado.add(tagProveedor3);
 		
 		
 		
 		//// LOGOS DEL SUPER
-		JLabel tag6 = new JLabel("Ingrese su Direccion: ");
-		tag6.setBounds(300, 345, 358, 18);
-		Crearempleado.add(tag6);
-		tag6.setFont(new Font("Arial", Font.BOLD, 15));
-		tag6.setForeground(Color.white);
+		JLabel tagCodigo = new JLabel("Ingrese su Direccion: ");
+		tagCodigo.setBounds(300, 345, 358, 18);
+		Crearempleado.add(tagCodigo);
+		tagCodigo.setFont(new Font("Arial", Font.BOLD, 15));
+		tagCodigo.setForeground(Color.white);
 
-		JLabel tag1 = new JLabel("Ingrese Sus Apellidos: ");
-		tag1.setBounds(300, 202, 302, 20);
-		Crearempleado.add(tag1);
-		tag1.setFont(new Font("comic sans", Font.BOLD, 15));
-		tag1.setForeground(Color.white);
+		JLabel tagProveedor = new JLabel("Ingrese Sus Apellidos: ");
+		tagProveedor.setBounds(300, 202, 302, 20);
+		Crearempleado.add(tagProveedor);
+		tagProveedor.setFont(new Font("comic sans", Font.BOLD, 15));
+		tagProveedor.setForeground(Color.white);
 
-		JLabel tag5 = new JLabel("Ingrese Su Numero De Telefono ");
-		tag5.setBounds(300, 269, 250, 18);
-		Crearempleado.add(tag5);
-		tag5.setFont(new Font("Arial", Font.BOLD, 15));
-		tag5.setForeground(Color.white);
+		JLabel tagFecha = new JLabel("Ingrese Su Numero De Telefono ");
+		tagFecha.setBounds(300, 269, 250, 18);
+		Crearempleado.add(tagFecha);
+		tagFecha.setFont(new Font("Arial", Font.BOLD, 15));
+		tagFecha.setForeground(Color.white);
 
-		JLabel tag4 = new JLabel("Ingrese Su Nombre:");
-		tag4.setBounds(300, 125, 193, 20);
-		Crearempleado.add(tag4);
-		tag4.setFont(new Font("comic sans", Font.BOLD, 15));
-		tag4.setForeground(Color.white);
+		JLabel tagProducto = new JLabel("Ingrese Su Nombre:");
+		tagProducto.setBounds(300, 125, 193, 20);
+		Crearempleado.add(tagProducto);
+		tagProducto.setFont(new Font("comic sans", Font.BOLD, 15));
+		tagProducto.setForeground(Color.white);
 
 		JTextField tfApellido = new JTextField();
 		tfApellido.setBounds(300, 223, 210, 26);
@@ -958,11 +958,11 @@ public class Ventana {
 
 		tfApellido.setFont(new Font("Comic sans ", Font.ITALIC, 15));
 
-		JTextField tfNombre = new JTextField();
-		tfNombre.setBounds(300, 160, 210, 31);
-		Crearempleado.add(tfNombre);
+		JTextField tfProveedor = new JTextField();
+		tfProveedor.setBounds(300, 160, 210, 31);
+		Crearempleado.add(tfProveedor);
 
-		tfNombre.setFont(new Font("Comic sans ", Font.ITALIC, 15));
+		tfProveedor.setFont(new Font("Comic sans ", Font.ITALIC, 15));
 
 		JTextField tfNumero = new JTextField();
 		tfNumero.setBounds(300,298, 210, 32);
@@ -1000,7 +1000,7 @@ public class Ventana {
 		            Random random = new Random();
 		            int key=( (999999999)* (random.nextInt() * (999999999 - 0 + 1)));
 		            statement.setInt(1, key);
-		            statement.setString(2, tfNombre.getText());
+		            statement.setString(2, tfProveedor.getText());
 		            statement.setString(3, tfApellido.getText());
 		            statement.setString(4, tfDireccion.getText());
 		            statement.setString(5, "Cajero");
@@ -1060,14 +1060,14 @@ public class Ventana {
 	public void CrearempleadoDel(JPanel Crearempleado) {
 		Crearempleado.removeAll();
 		////// TITULO DE CREAR EMPLEADO
-		JLabel tag13 = new JLabel("BIEVENIDO A LA SESION DE EMPLEADO");
-		tag13.setBackground(Color.BLACK);
-		tag13.setHorizontalAlignment(SwingConstants.CENTER);
-		tag13.setSize(429, 45);
-		tag13.setFont(new Font("Arial", Font.BOLD, 20));
-		tag13.setForeground(Color.WHITE);
-		tag13.setLocation(229, 36);
-		Crearempleado.add(tag13);
+		JLabel tagProveedor3 = new JLabel("BIEVENIDO A LA SESION DE EMPLEADO");
+		tagProveedor3.setBackground(Color.BLACK);
+		tagProveedor3.setHorizontalAlignment(SwingConstants.CENTER);
+		tagProveedor3.setSize(429, 45);
+		tagProveedor3.setFont(new Font("Arial", Font.BOLD, 20));
+		tagProveedor3.setForeground(Color.WHITE);
+		tagProveedor3.setLocation(229, 36);
+		Crearempleado.add(tagProveedor3);
 		//// LOGOS DEL SUPER
 		ImageIcon img9 = new ImageIcon("Logo4.png");
 		JLabel im9 = new JLabel(img9);
@@ -1091,9 +1091,9 @@ public class Ventana {
 		IngreseNombre.setFont(new Font("Arial", Font.BOLD, 15));
 		IngreseNombre.setForeground(Color.white);
 		Crearempleado.add(IngreseNombre);
-		JTextField tfNombre = new JTextField();
-		tfNombre.setBounds(300, 160, 210, 31);
-		Crearempleado.add(tfNombre);
+		JTextField tfProveedor = new JTextField();
+		tfProveedor.setBounds(300, 160, 210, 31);
+		Crearempleado.add(tfProveedor);
 		ImageIcon imgRegresar = new ImageIcon("regresar.png");
 		JButton regresar = new JButton(imgRegresar);
 		JButton jbnDel = new JButton("ELIMINAR");
@@ -1110,7 +1110,7 @@ public class Ventana {
 		            Connection conexion = conectar();
 		            String query = "DELETE FROM empleados WHERE Nombre = ?";
 		            PreparedStatement statement = (PreparedStatement) conexion.prepareStatement(query);
-		            statement.setString(1, tfNombre.getText());
+		            statement.setString(1, tfProveedor.getText());
 		            int filasAfectadas = statement.executeUpdate();
 
 		            if (filasAfectadas > 0) {
@@ -1164,12 +1164,12 @@ public class Ventana {
                 String StrEmpleado=("Cedula: " + cedula+"  Nombre: " + nombre+"  Apellido: " + apellido+
                 		"  Direccion: " + direccion+"	  Cargo: " + cargo+"  Telefono: " + telefono);
                 JLabel labelAux= new JLabel(StrEmpleado);
-                labelAux.setBounds(140,140+(contadorY*40),800,20);
+                labelAux.setBounds(140,140+(contadorY*40),680,20);
                 labelAux.setOpaque(true);
                 labelAux.setBackground(Color.white);
                 contadorY++;
                 Crearempleado.add(labelAux);
-                System.out.println(StrEmpleado);
+//                System.out.println(StrEmpleado);
             }
 
             conexion.close();
@@ -1182,14 +1182,14 @@ public class Ventana {
 		
 		
 		////// TITULO DE CREAR EMPLEADO
-		JLabel tag13 = new JLabel("BIEVENIDO A LA SESION DE EMPLEADO");
-		tag13.setBackground(Color.BLACK);
-		tag13.setHorizontalAlignment(SwingConstants.CENTER);
-		tag13.setSize(429, 45);
-		tag13.setFont(new Font("Arial", Font.BOLD, 20));
-		tag13.setForeground(Color.WHITE);
-		tag13.setLocation(229, 36);
-		Crearempleado.add(tag13);
+		JLabel tagProveedor3 = new JLabel("BIEVENIDO A LA SESION DE EMPLEADO");
+		tagProveedor3.setBackground(Color.BLACK);
+		tagProveedor3.setHorizontalAlignment(SwingConstants.CENTER);
+		tagProveedor3.setSize(429, 45);
+		tagProveedor3.setFont(new Font("Arial", Font.BOLD, 20));
+		tagProveedor3.setForeground(Color.WHITE);
+		tagProveedor3.setLocation(229, 36);
+		Crearempleado.add(tagProveedor3);
 		//// LOGOS DEL SUPER
 		
 		
@@ -1247,14 +1247,14 @@ public class Ventana {
 		Crearproducto.removeAll();
 		////// TITULO DE CREAR EMPLEADO
 		////// TITULO DE CREAR COMPRA
-		JLabel tag14 = new JLabel("BIEVENIDO A LA SECCION DE PRODUCTOS");
-		tag14.setBackground(Color.BLACK);
-		tag14.setHorizontalAlignment(SwingConstants.CENTER);
-		tag14.setSize(429, 45);
-		tag14.setFont(new Font("Arial", Font.BOLD, 20));
-		tag14.setForeground(Color.WHITE);
-		tag14.setLocation(229, 36);
-		Crearproducto.add(tag14);
+		JLabel tagProveedor4 = new JLabel("BIEVENIDO A LA SECCION DE PRODUCTOS");
+		tagProveedor4.setBackground(Color.BLACK);
+		tagProveedor4.setHorizontalAlignment(SwingConstants.CENTER);
+		tagProveedor4.setSize(429, 45);
+		tagProveedor4.setFont(new Font("Arial", Font.BOLD, 20));
+		tagProveedor4.setForeground(Color.WHITE);
+		tagProveedor4.setLocation(229, 36);
+		Crearproducto.add(tagProveedor4);
 		//// LOGOS DEL SUPER
 		ImageIcon img11 = new ImageIcon("Logo5.png");
 		JLabel im11 = new JLabel(img11);
@@ -1341,62 +1341,64 @@ public class Ventana {
 		Crearproducto.removeAll();
 		////// TITULO DE CREAR EMPLEADO
 		////// TITULO DE CREAR COMPRA
-		JLabel tag14 = new JLabel("BIEVENIDO A LA SECCION DE PRODUCTOS");
-		tag14.setBackground(Color.BLACK);
-		tag14.setHorizontalAlignment(SwingConstants.CENTER);
-		tag14.setSize(429, 45);
-		tag14.setFont(new Font("Arial", Font.BOLD, 20));
-		tag14.setForeground(Color.WHITE);
-		tag14.setLocation(229, 36);
-		Crearproducto.add(tag14);
+		
+	
+		JLabel tagProveedor4 = new JLabel("BIEVENIDO A LA SECCION DE PRODUCTOS");
+		tagProveedor4.setBackground(Color.BLACK);
+		tagProveedor4.setHorizontalAlignment(SwingConstants.CENTER);
+		tagProveedor4.setSize(429, 45);
+		tagProveedor4.setFont(new Font("Arial", Font.BOLD, 20));
+		tagProveedor4.setForeground(Color.WHITE);
+		tagProveedor4.setLocation(229, 36);
+		Crearproducto.add(tagProveedor4);
 		//// LOGOS DEL SUPER
-		JLabel tag6 = new JLabel("Ingrese El Codigo Del Producto: ");
-		tag6.setBounds(300, 345, 358, 18);
-		Crearproducto.add(tag6);
-		tag6.setFont(new Font("Arial", Font.BOLD, 15));
-		tag6.setForeground(Color.white);
+		JLabel tagCodigo = new JLabel("Ingrese El Codigo Del Producto: ");
+		tagCodigo.setBounds(300, 345, 358, 18);
+		Crearproducto.add(tagCodigo);
+		tagCodigo.setFont(new Font("Arial", Font.BOLD, 15));
+		tagCodigo.setForeground(Color.white);
 
-		JLabel tag1 = new JLabel("Ingrese El Nombre De La Empresa: ");
-		tag1.setBounds(300, 202, 302, 20);
-		Crearproducto.add(tag1);
-		tag1.setFont(new Font("comic sans", Font.BOLD, 15));
-		tag1.setForeground(Color.white);
+		JLabel tagProveedor = new JLabel("Ingrese El Nombre Del Proveedor: ");
+		tagProveedor.setBounds(300, 202, 302, 20);
+		Crearproducto.add(tagProveedor);
+		tagProveedor.setFont(new Font("comic sans", Font.BOLD, 15));
+		tagProveedor.setForeground(Color.white);
 
-		JLabel tag5 = new JLabel("Ingrese La Fecha De Caducidad ");
-		tag5.setBounds(300, 269, 250, 18);
-		Crearproducto.add(tag5);
-		tag5.setFont(new Font("Arial", Font.BOLD, 15));
-		tag5.setForeground(Color.white);
+		JLabel tagFecha = new JLabel("Ingrese La Fecha De Caducidad ");
+		tagFecha.setBounds(300, 269, 250, 18);
+		Crearproducto.add(tagFecha);
+		tagFecha.setFont(new Font("Arial", Font.BOLD, 15));
+		tagFecha.setForeground(Color.white);
 
-		JLabel tag4 = new JLabel("Ingrese El Nombre Del Producto:");
-		tag4.setBounds(300, 125, 393, 20);
-		Crearproducto.add(tag4);
-		tag4.setFont(new Font("comic sans", Font.BOLD, 15));
-		tag4.setForeground(Color.white);
+		JLabel tagProducto = new JLabel("Ingrese El Nombre Del Producto:");
+		tagProducto.setBounds(300, 125, 393, 20);
+		Crearproducto.add(tagProducto);
+		tagProducto.setFont(new Font("comic sans", Font.BOLD, 15));
+		tagProducto.setForeground(Color.white);
 
-		JTextField mail9 = new JTextField();
-		mail9.setBounds(300, 223, 210, 26);
-		Crearproducto.add(mail9);
+		JTextField tfProveedor = new JTextField();
+		tfProveedor.setBounds(300, 223, 210, 26);
+		Crearproducto.add(tfProveedor);
 
-		mail9.setFont(new Font("Comic sans ", Font.ITALIC, 15));
+		tfProveedor.setFont(new Font("Comic sans ", Font.ITALIC, 15));
 
-		JTextField mail1 = new JTextField();
-		mail1.setBounds(300, 160, 210, 31);
-		Crearproducto.add(mail1);
+		JTextField tfNombre = new JTextField();
+		tfNombre.setBounds(300, 160, 210, 31);
+		Crearproducto.add(tfNombre);
 
-		mail1.setFont(new Font("Comic sans ", Font.ITALIC, 15));
+		tfNombre.setFont(new Font("Comic sans ", Font.ITALIC, 15));
 
-		JTextField mail12 = new JTextField();
-		mail12.setBounds(300, 298, 210, 32);
-		Crearproducto.add(mail12);
+		JTextField tfCodigo = new JTextField();
+		tfCodigo.setBounds(300, 298, 210, 32);
+		Crearproducto.add(tfCodigo);
 
-		mail12.setFont(new Font("Comic sans ", Font.ITALIC, 15));
+		tfCodigo.setFont(new Font("Comic sans ", Font.ITALIC, 15));
 
-		JTextField mail13 = new JTextField();
-		mail13.setBounds(300, 370, 210, 32);
-		Crearproducto.add(mail13);
+		JTextField tfFecha = new JTextField();
+		tfFecha.setBounds(300, 370, 210, 32);
+		Crearproducto.add(tfFecha);
 
-		mail13.setFont(new Font("Comic sans ", Font.ITALIC, 15));
+		tfFecha.setFont(new Font("Comic sans ", Font.ITALIC, 15));
 
 		JButton cancelar = new JButton("CANCELAR");
 		cancelar.setSize(132, 60);
@@ -1411,7 +1413,38 @@ public class Ventana {
 		jbnAccess.setForeground(Color.decode("#FFFFFF"));
 		jbnAccess.setBackground(Color.decode("#4491F4"));
 		Crearproducto.add(jbnAccess);
-		
+		jbnAccess.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+		            Connection conexion = conectar();
+		            String code = tfCodigo.getText();String dat= tfFecha.getText();
+		            double cod=Integer.parseInt(code);int datee = Integer.parseInt(dat);
+		            Producto producto = new Producto(cod,"producto general",tfNombre.getText(),datee,tfProveedor.getText());
+		            
+		            String query = "INSERT INTO productos (Codigo, Tipo, Nombre, Fecha_caducidad, Proveedor) VALUES (?, ?, ?, ?, ?)";
+		            PreparedStatement preparedStatement = (PreparedStatement) conexion.prepareStatement(query);
+		            preparedStatement.setDouble(1, producto.getCodigo());
+		            preparedStatement.setString(2, producto.getTipo());
+		            preparedStatement.setString(3, producto.getNombre());
+		            preparedStatement.setInt(4, producto.getFechaCaducidad());
+		            preparedStatement.setString(5, producto.getProveedor());
+
+		            int filasAfectadas = preparedStatement.executeUpdate();
+
+		            if (filasAfectadas > 0) {
+		                System.out.println("Producto agregado con éxito");
+		            } else {
+		                System.out.println("No se pudo agregar el producto");
+		            }
+
+		            conexion.close();
+
+		        } catch (SQLException e1) {
+		            System.out.println("Error en la conexión");
+		            e1.printStackTrace();
+		        }
+			}});
 		
 		
 		ImageIcon img11 = new ImageIcon("Logo5.png");
@@ -1454,14 +1487,14 @@ public class Ventana {
 		Crearproducto.removeAll();
 		////// TITULO DE CREAR EMPLEADO
 		////// TITULO DE CREAR COMPRA
-		JLabel tag14 = new JLabel("BIEVENIDO A LA SECCION DE PRODUCTOS");
-		tag14.setBackground(Color.BLACK);
-		tag14.setHorizontalAlignment(SwingConstants.CENTER);
-		tag14.setSize(429, 45);
-		tag14.setFont(new Font("Arial", Font.BOLD, 20));
-		tag14.setForeground(Color.WHITE);
-		tag14.setLocation(229, 36);
-		Crearproducto.add(tag14);
+		JLabel tagProveedor4 = new JLabel("BIEVENIDO A LA SECCION DE PRODUCTOS");
+		tagProveedor4.setBackground(Color.BLACK);
+		tagProveedor4.setHorizontalAlignment(SwingConstants.CENTER);
+		tagProveedor4.setSize(429, 45);
+		tagProveedor4.setFont(new Font("Arial", Font.BOLD, 20));
+		tagProveedor4.setForeground(Color.WHITE);
+		tagProveedor4.setLocation(229, 36);
+		Crearproducto.add(tagProveedor4);
 		//// LOGOS DEL SUPER
 		ImageIcon img11 = new ImageIcon("Logo5.png");
 		JLabel im11 = new JLabel(img11);
@@ -1481,6 +1514,46 @@ public class Ventana {
 		Crearproducto.add(im12);
 		ImageIcon imgRegresar = new ImageIcon("regresar.png");
 		JButton regresar = new JButton(imgRegresar);
+		JLabel IngreseNombre = new JLabel("Ingrese el nombre del empleado a Eliminar: ");
+		IngreseNombre.setBounds(300, 120, 358, 18);
+		IngreseNombre.setFont(new Font("Arial", Font.BOLD, 15));
+		IngreseNombre.setForeground(Color.white);
+		Crearproducto.add(IngreseNombre);
+		JTextField tfProveedor = new JTextField();
+		tfProveedor.setBounds(300, 160, 210, 31);
+		Crearproducto.add(tfProveedor);
+		JButton jbnDel = new JButton("ELIMINAR");
+		jbnDel.setSize(122, 60);
+		jbnDel.setLocation(420, 424);
+		jbnDel.setForeground(Color.decode("#FFFFFF"));
+		jbnDel.setBackground(Color.red);
+		Crearproducto.add(jbnDel);
+		
+		jbnDel.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+		            Connection conexion = conectar();
+		            String query = "DELETE FROM productos WHERE Nombre = ?";
+		            PreparedStatement preparedStatement = (PreparedStatement) conexion.prepareStatement(query);
+		            preparedStatement.setString(1, tfProveedor.getText());
+
+		            int filasAfectadas = preparedStatement.executeUpdate();
+
+		            if (filasAfectadas > 0) {
+		                System.out.println("Empleado eliminado con éxito");
+		            } else {
+		                System.out.println("No se pudo eliminar el empleado");
+		            }
+
+		            conexion.close();
+
+		        } catch (SQLException e1) {
+		            System.out.println("Error en la conexión");
+		            e1.printStackTrace();
+		        }
+			}});
+		
 		regresar.setBounds(700, 400, 100, 100);
 		regresar.addActionListener(new ActionListener() {
 			@Override
@@ -1503,14 +1576,45 @@ public class Ventana {
 		Crearproducto.removeAll();
 		////// TITULO DE CREAR EMPLEADO
 		////// TITULO DE CREAR COMPRA
-		JLabel tag14 = new JLabel("BIEVENIDO A LA SECCION DE PRODUCTOS");
-		tag14.setBackground(Color.BLACK);
-		tag14.setHorizontalAlignment(SwingConstants.CENTER);
-		tag14.setSize(429, 45);
-		tag14.setFont(new Font("Arial", Font.BOLD, 20));
-		tag14.setForeground(Color.WHITE);
-		tag14.setLocation(229, 36);
-		Crearproducto.add(tag14);
+		
+		try {
+            Connection conexion = conectar();
+            Statement statement = conexion.createStatement();
+            String query = "SELECT * FROM productos";
+            ResultSet resultSet = statement.executeQuery(query);
+            int contadorY=0;
+            while (resultSet.next()) {
+                double codigo = resultSet.getDouble("Codigo");
+                String tipo = resultSet.getString("Tipo");
+                String nombre = resultSet.getString("Nombre");
+                int fechaCaducidad = resultSet.getInt("Fecha_caducidad");
+                String proveedor = resultSet.getString("Proveedor");
+
+                Producto producto = new Producto(codigo, tipo, nombre, fechaCaducidad, proveedor);
+//                System.out.println(producto.toString());
+                JLabel labelAux= new JLabel(producto.toString());
+                labelAux.setBounds(200,140+(contadorY*40),540,20);
+                labelAux.setOpaque(true);
+                labelAux.setBackground(Color.red);
+                contadorY++;
+                Crearproducto.add(labelAux);
+            }
+
+            conexion.close();
+
+        } catch (SQLException e) {
+            System.out.println("Error en la conexión");
+            e.printStackTrace();
+        }
+		
+		JLabel tagProveedor4 = new JLabel("BIEVENIDO A LA SECCION DE PRODUCTOS");
+		tagProveedor4.setBackground(Color.BLACK);
+		tagProveedor4.setHorizontalAlignment(SwingConstants.CENTER);
+		tagProveedor4.setSize(429, 45);
+		tagProveedor4.setFont(new Font("Arial", Font.BOLD, 20));
+		tagProveedor4.setForeground(Color.WHITE);
+		tagProveedor4.setLocation(229, 36);
+		Crearproducto.add(tagProveedor4);
 		//// LOGOS DEL SUPER
 		ImageIcon img11 = new ImageIcon("Logo5.png");
 		JLabel im11 = new JLabel(img11);
