@@ -17,6 +17,7 @@ import com.mysql.jdbc.PreparedStatement;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -364,32 +365,153 @@ public class Ventana {
 	public void CrearpedidoCrear(JPanel Crearpedido) {
 		Crearpedido.removeAll();
 		
-		try {
-			OrdenPedido ordenPedido = new OrdenPedido(
-		            "2023-06-13",
-		            "123456",
-		            "Juan",
-		            "2023-07-01",
-		            "Sucursal A",
-		            "100.0"
-		        );
-		        ordenPedido.agregarProducto(new Producto(400.302,"normal","Producto A", 201071,"goku", 50.0));
-		        ordenPedido.agregarProducto(new Producto(400.302,"norasfasfmal","Prodasfasfasfucto A", 201071,"goku", 50.0));
-		        ordenPedido.agregarProducto(new Producto(400.302,"norasfasfasmal","Prodasfasfaucto A", 201071,"goku", 50.0));
+				try {
+					
+		            Connection conexion = conectar();
+		            Statement statement = conexion.createStatement();
+		            String query = "SELECT * FROM productos";
+		            ResultSet resultSet = statement.executeQuery(query);
+		            
+		            OrdenPedido ordenPedido = new OrdenPedido(
+				            "2023-06-13",
+				            "123456",
+				            "Juan",
+				            "2023-07-01",
+				            "Sucursal A",
+				            "100.0"
+				        );
+		            int contadorY=0;
+		            while (resultSet.next()) {
+		                double codigo = resultSet.getDouble("codigo");
+		                String tipo = resultSet.getString("tipo");
+		                String nombre = resultSet.getString("nombre");
+		                int fechaCaducidad = resultSet.getInt("Fecha_caducidad");
+		                String proveedor = resultSet.getString("proveedor");
+		                double precio = resultSet.getDouble("precio");
+		
+		                Producto producto = new Producto(codigo, tipo, nombre, fechaCaducidad, proveedor, precio);
+		
+		                System.out.println("Producto: " + nombre);
+		                System.out.println("Código: " + codigo);
+		                System.out.println("Tipo: " + tipo);
+		                System.out.println("Fecha de caducidad: " + fechaCaducidad);
+		                System.out.println("Proveedor: " + proveedor);
+		                System.out.println("Precio: " + precio);
+		                System.out.println("---------------------------");
+		                
+		                JLabel labelAux= new JLabel(producto.toString());
+		                labelAux.setBounds(140,140+(contadorY*40),380,20);
+		                labelAux.setOpaque(true);
+		                labelAux.setBackground(Color.cyan);
+		                BotonEspecial add = new BotonEspecial();
+		                add.setBounds(140+400,140+(contadorY*40),20,20);
+		                add.setOpaque(true);add.setBackground(Color.green);
+		                add.setProducto(producto);
+		                add.addActionListener(new ActionListener() {
+							@Override
+							public void actionPerformed(ActionEvent e) {
+								//								System.out.println(add.getProducto().toString());
+								ordenPedido.agregarProducto(producto);
+								System.out.println(ordenPedido.generarTicket());
+								
+								int pedidoClave = 12412441;
+				                String ticket = ordenPedido.generarTicket();
+				                String informacion=("Clave: " + pedidoClave + "\n\nTicket: " + ticket);
+				                int maxLength = 45; // Longitud máxima para cada subcadena
+				                int totalLabels = (int) Math.ceil((double) informacion.length() / maxLength);
+				                for (int i = 0; i < totalLabels; i++) {
+				                    int startIndex = i * maxLength;
+				                    int endIndex = Math.min((i + 1) * maxLength, informacion.length());
+				                    String subString = informacion.substring(startIndex, endIndex);
+				                    JLabel labelTicket = new JLabel(subString);
+				                    labelTicket.setBounds(450, 100 + (i * 20), 500, 20);
+				                    labelTicket.setOpaque(true);
+				                    labelTicket.setBackground(Color.WHITE);
+				                    Crearpedido.add(labelTicket);
 
-            Connection conexion = conectar();
-            Statement statement = conexion.createStatement();
-            String ticket = ordenPedido.generarTicket();
-            int clave =(int) (Math.random() * 10000000);
-            String query = "INSERT INTO pedidos (Ticket, Clave) VALUES ('" + ticket + "', " + clave + ")";
-            int filasAfectadas = statement.executeUpdate(query);
-            System.out.println("Filas afectadas: " + filasAfectadas);
-            conexion.close();
+				                    }
+				                
+				                
+				                
+			                	Crearpedido.repaint();
 
-        } catch (SQLException e) {
-            System.out.println("Error al agregar producto");
-            e.printStackTrace();
-        }
+							
+							}
+				                
+							});
+		                
+		                BotonEspecial del = new BotonEspecial();
+		                del.setBounds(170+400,140+(contadorY*40),20,20);
+		                del.setOpaque(true);del.setBackground(Color.red);
+		                del.setProducto(producto);
+		                del.addActionListener(new ActionListener() {
+							@Override
+							public void actionPerformed(ActionEvent e) {
+								ordenPedido.eliminarProducto(producto);
+//								System.out.println(add.getProducto().toString());
+								int pedidoClave = 12412441;
+				                String ticket = ordenPedido.generarTicket();
+				                String informacion=("Clave: " + pedidoClave + "\n\nTicket: " + ticket);
+				                int maxLength = 45; // Longitud máxima para cada subcadena
+				                int totalLabels = (int) Math.ceil((double) informacion.length() / maxLength);
+				                for (int i = 0; i < totalLabels; i++) {
+				                    int startIndex = i * maxLength;
+				                    int endIndex = Math.min((i + 1) * maxLength, informacion.length());
+				                    String subString = informacion.substring(startIndex, endIndex);
+				                    JLabel labelTicket = new JLabel(subString);
+				                    labelTicket.setBounds(450, 100 + (i * 20), 500, 20);
+				                    labelTicket.setOpaque(true);
+				                    labelTicket.setBackground(Color.WHITE);
+				                    Crearpedido.add(labelTicket);}
+								
+							}});
+		                
+		                JButton comprar = new JButton("Comprar");
+		                comprar.setBounds(200,90,180,30);
+		                comprar.setOpaque(true);comprar.setBackground(Color.yellow);
+		                comprar.addActionListener(new ActionListener() {
+							@Override
+							public void actionPerformed(ActionEvent e) {
+								 try {
+							            Connection conexion = conectar();
+							            String query = "INSERT INTO pedidos (clave, ticket) VALUES (?, ?)";
+							            PreparedStatement statement = (PreparedStatement) conexion.prepareStatement(query);
+										int pedidoClave = new Random().nextInt(10000000);
+
+							            
+							            statement.setInt(1, pedidoClave);
+							            statement.setString(2, ordenPedido.generarTicket());
+							            statement.executeUpdate();
+
+							            System.out.println("Pedido agregado correctamente");
+							            
+							            statement.close();
+							            conexion.close();
+							            CrearpedidoLoby(Crearpedido);
+							            subPanelPedidos="loby";
+							            Crearpedido.repaint();
+							        } catch (SQLException e1) {
+							            System.out.println("Error en la conexión");
+							            e1.printStackTrace();
+							        }
+							}});
+		                
+		                
+		                
+		                Crearpedido.add(comprar);
+		                contadorY++;
+		                Crearpedido.add(labelAux);
+		                Crearpedido.add(add);Crearpedido.add(del);
+		            }
+		
+		            resultSet.close();
+		            statement.close();
+		            conexion.close();
+		
+		        } catch (SQLException e) {
+		            System.out.println("Error en la conexión");
+		            e.printStackTrace();
+		        }
 		
 		JLabel tagProveedor1 = new JLabel("BIENVENIDO A LA SESION DE PEDIDOS");
 		tagProveedor1.setBackground(Color.BLACK);
@@ -1704,14 +1826,14 @@ public class Ventana {
 		            double cod=Integer.parseInt(code);int datee = Integer.parseInt(dat);
 		            Producto producto = new Producto(cod,"producto general",tfNombre.getText(),datee,tfProveedor.getText(),300.40);
 		            
-		            String query = "INSERT INTO productos (Codigo, Tipo, Nombre, Fecha_caducidad, Proveedor,Precio) VALUES (?, ?, ?, ?, ?,?)";
+		            String query = "INSERT INTO productos (Codigo, Tipo, Nombre, Fecha_caducidad, Proveedor,Precio) VALUES (?, ?, ?, ?, ?, ?)";
 		            PreparedStatement preparedStatement = (PreparedStatement) conexion.prepareStatement(query);
 		            preparedStatement.setDouble(1, producto.getCodigo());
 		            preparedStatement.setString(2, producto.getTipo());
 		            preparedStatement.setString(3, producto.getNombre());
 		            preparedStatement.setInt(4, producto.getFechaCaducidad());
 		            preparedStatement.setString(5, producto.getProveedor());
-		            preparedStatement.setDouble(6, 300.40);
+		            preparedStatement.setDouble(6, producto.getPrecio());
 
 		            
 		            int filasAfectadas = preparedStatement.executeUpdate();

@@ -16,6 +16,8 @@ public class OrdenPedido {
 
     public void agregarProducto(Producto producto) {
         this.productos.add(producto);
+    }public void eliminarProducto(Producto producto) {
+        this.productos.remove(producto);
     }
 
     public String generarTicket() {
@@ -46,17 +48,17 @@ public class OrdenPedido {
         double precioTotal = 0.0;
 
         // Contador para contar la cantidad de veces que se repite un producto
-        int contadorProductos = 0;
+//        int contadorProductos = 0;
 
         for (Producto producto : productos) {
             precioTotal += producto.getPrecio();
-            contadorProductos++;
+//            contadorProductos++;
         }
 
         // Realiza la operación del precio total en base a la cantidad de productos repetidos
-        if (contadorProductos > 1) {
-            precioTotal = precioTotal * contadorProductos;
-        }
+//        if (contadorProductos > 1) {
+//            precioTotal = precioTotal * contadorProductos;
+//        }
 
         return precioTotal;
     }
