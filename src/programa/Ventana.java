@@ -673,7 +673,33 @@ public class Ventana {
 		jbnAccess.setForeground(Color.decode("#FFFFFF"));
 		jbnAccess.setBackground(Color.decode("#4491F4"));
 		Crearprovedor.add(jbnAccess);
+		jbnAccess.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				 try {
+					 Random random = new Random();
+			            int key=( (9999999)* (random.nextInt() * (9999999 - 0 + 1)));
+			            String k =String.valueOf(key);
+			            Connection conexion = conectar();
+			            String query = "INSERT INTO proveedores (Nombre, Apellido, Cedula, Telefono, Direccion, Empresa) VALUES (?, ?, ?, ?, ?,?)";
+			            PreparedStatement statement = (PreparedStatement) conexion.prepareStatement(query);
+			            statement.setString(1,tfNombre.getText());
+			            statement.setString(2,tfProveedor.getText());
+			            statement.setString(3,k);
+			            statement.setString(4,"666");
+			            statement.setString(5, tfFecha.getText());
+			            statement.setString(6,tfCodigo.getText());
+			            statement.executeUpdate();
 
+			            System.out.println("Proveedor agregado correctamente.");
+
+			            conexion.close();
+
+			        } catch (SQLException e1) {
+			            System.out.println("Error en la conexión");
+			            e1.printStackTrace();
+			        }				
+			}});
 		
 		
 		
@@ -717,10 +743,10 @@ public class Ventana {
 	public void CrearprovedorDel(JPanel Crearprovedor) {
 		Crearprovedor.removeAll();
 		////// TITULO DE CREAR PERSONA
-		JLabel tagProveedor2 = new JLabel("BIENVENIDO A LA SESION DE PEDIDO");
+		JLabel tagProveedor2 = new JLabel("BIENVENIDO A LA SESION DE PROVEEDORES");
 		tagProveedor2.setBackground(Color.BLACK);
 		tagProveedor2.setHorizontalAlignment(SwingConstants.CENTER);
-		tagProveedor2.setSize(387, 45);
+		tagProveedor2.setSize(420, 45);
 		tagProveedor2.setFont(new Font("Arial", Font.BOLD, 20));
 		tagProveedor2.setForeground(Color.WHITE);
 		tagProveedor2.setLocation(245, 35);
@@ -745,6 +771,40 @@ public class Ventana {
 		ImageIcon imgRegresar = new ImageIcon("regresar.png");
 		JButton regresar = new JButton(imgRegresar);
 		regresar.setBounds(700, 400, 100, 100);
+		JLabel IngreseNombre = new JLabel("Ingrese el nombre del proveedor a Eliminar: ");
+		IngreseNombre.setBounds(300, 120, 358, 18);
+		IngreseNombre.setFont(new Font("Arial", Font.BOLD, 15));
+		IngreseNombre.setForeground(Color.white);
+		Crearprovedor.add(IngreseNombre);
+		JTextField tfProveedor = new JTextField();
+		tfProveedor.setBounds(300, 160, 210, 31);
+		Crearprovedor.add(tfProveedor);
+		JButton jbnDel = new JButton("ELIMINAR");
+		jbnDel.setSize(122, 60);
+		jbnDel.setLocation(420, 424);
+		jbnDel.setForeground(Color.decode("#FFFFFF"));
+		jbnDel.setBackground(Color.red);
+		Crearprovedor.add(jbnDel);
+		jbnDel.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				try {
+		            Connection conexion = conectar();
+		            String query = "DELETE FROM proveedores WHERE Nombre = ?";
+		            PreparedStatement statement = (PreparedStatement) conexion.prepareStatement(query);
+		            statement.setString(1, tfProveedor.getText());
+		            statement.executeUpdate();
+
+		            System.out.println("Proveedor eliminado correctamente.");
+
+		            conexion.close();
+
+		        } catch (SQLException e1) {
+		            System.out.println("Error en la conexión");
+		            e1.printStackTrace();
+		        }				
+			}});
+		
 		regresar.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -765,6 +825,36 @@ public class Ventana {
 	public void CrearprovedorBuscar(JPanel Crearprovedor) {
 		Crearprovedor.removeAll();
 		////// TITULO DE CREAR PERSONA
+		try {
+            Connection conexion = conectar();
+            Statement statement = conexion.createStatement();
+            String query = "SELECT * FROM proveedores";
+            ResultSet resultSet = statement.executeQuery(query);
+            int contadorY=0;
+            while (resultSet.next()) {
+                String nombre = resultSet.getString("Nombre");
+                String apellido = resultSet.getString("Apellido");
+                String cedula = resultSet.getString("Cedula");
+                String telefono = resultSet.getString("Telefono");
+                String direccion = resultSet.getString("Direccion");
+                String empresa = resultSet.getString("Empresa");
+
+                Proveedor proveedor = new Proveedor(nombre, apellido, cedula, telefono, direccion,empresa);
+                JLabel labelAux= new JLabel(proveedor.toString());
+                labelAux.setBounds(140,140+(contadorY*40),680,20);
+                labelAux.setOpaque(true);
+                labelAux.setBackground(Color.red);
+                contadorY++;
+                Crearprovedor.add(labelAux);
+//                System.out.println(proveedor.toString());
+            }
+
+            conexion.close();
+
+        } catch (SQLException e) {
+            System.out.println("Error en la conexión");
+            e.printStackTrace();
+        }
 		JLabel tagProveedor2 = new JLabel("BIENVENIDO A LA SESION DE PEDIDO");
 		tagProveedor2.setBackground(Color.BLACK);
 		tagProveedor2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -1094,14 +1184,15 @@ public class Ventana {
 		JTextField tfProveedor = new JTextField();
 		tfProveedor.setBounds(300, 160, 210, 31);
 		Crearempleado.add(tfProveedor);
-		ImageIcon imgRegresar = new ImageIcon("regresar.png");
-		JButton regresar = new JButton(imgRegresar);
 		JButton jbnDel = new JButton("ELIMINAR");
 		jbnDel.setSize(122, 60);
 		jbnDel.setLocation(420, 424);
 		jbnDel.setForeground(Color.decode("#FFFFFF"));
 		jbnDel.setBackground(Color.red);
 		Crearempleado.add(jbnDel);
+		ImageIcon imgRegresar = new ImageIcon("regresar.png");
+		JButton regresar = new JButton(imgRegresar);
+		
 		
 		jbnDel.addActionListener(new ActionListener() {
 			@Override
