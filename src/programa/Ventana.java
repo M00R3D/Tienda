@@ -38,7 +38,7 @@ public class Ventana {
 	private static final String CONTROLADOR = "com.mysql.jdbc.Driver";
     private static final String URL = "jdbc:mysql://localhost:3306/pruebita";
     private static final String USUARIO = "root";
-    private static final String CLAVE = "";
+    private static final String CLAVE = "0312";
 	
 	private JFrame frame;
 	private JPanel gran_panel;
@@ -364,9 +364,17 @@ public class Ventana {
 
 	public void CrearpedidoCrear(JPanel Crearpedido) {
 		Crearpedido.removeAll();
-		
+		JLabel tagProducto = new JLabel("Ingrese el Nombre del empleado:");
+		tagProducto.setBounds(100, 125+60+400, 193, 20);
+		Crearpedido.add(tagProducto);
+		tagProducto.setFont(new Font("comic sans", Font.BOLD, 15));
+		tagProducto.setForeground(Color.black);
+		JTextField tfNombre = new JTextField();
+		tfNombre.setBounds(100, 160+60+400, 210, 31);
+		Crearpedido.add(tfNombre);
+
 				try {
-					
+					int pedidoClave = new Random().nextInt(10000000);
 		            Connection conexion = conectar();
 		            Statement statement = conexion.createStatement();
 		            String query = "SELECT * FROM productos";
@@ -374,8 +382,8 @@ public class Ventana {
 		            
 		            OrdenPedido ordenPedido = new OrdenPedido(
 				            "2023-06-13",
-				            "123456",
-				            "Juan",
+				            "00000",
+				            tfNombre.getText(),
 				            "2023-07-01",
 				            "Sucursal A",
 				            "100.0"
@@ -403,18 +411,22 @@ public class Ventana {
 		                labelAux.setBounds(140,140+(contadorY*40),380,20);
 		                labelAux.setOpaque(true);
 		                labelAux.setBackground(Color.cyan);
+						JPanel panelTicket = new JPanel();
+						panelTicket.setBounds(800,200 , 400, 1920);
 		                BotonEspecial add = new BotonEspecial();
 		                add.setBounds(140+400,140+(contadorY*40),20,20);
 		                add.setOpaque(true);add.setBackground(Color.green);
 		                add.setProducto(producto);
+	                    Crearpedido.add(panelTicket);
 		                add.addActionListener(new ActionListener() {
 							@Override
 							public void actionPerformed(ActionEvent e) {
 								//								System.out.println(add.getProducto().toString());
+
+								panelTicket.removeAll();
 								ordenPedido.agregarProducto(producto);
 								System.out.println(ordenPedido.generarTicket());
 								
-								int pedidoClave = 12412441;
 				                String ticket = ordenPedido.generarTicket();
 				                String informacion=("Clave: " + pedidoClave + "\n\nTicket: " + ticket);
 				                int maxLength = 45; // Longitud máxima para cada subcadena
@@ -424,11 +436,11 @@ public class Ventana {
 				                    int endIndex = Math.min((i + 1) * maxLength, informacion.length());
 				                    String subString = informacion.substring(startIndex, endIndex);
 				                    JLabel labelTicket = new JLabel(subString);
-				                    labelTicket.setBounds(450, 100 + (i * 20), 500, 20);
+				                    labelTicket.setBounds(30, 0 + (i * 20), 500, 20);
 				                    labelTicket.setOpaque(true);
 				                    labelTicket.setBackground(Color.WHITE);
-				                    Crearpedido.add(labelTicket);
-
+				                    panelTicket.add(labelTicket);
+				                    panelTicket.repaint();
 				                    }
 				                
 				                
@@ -449,7 +461,6 @@ public class Ventana {
 							public void actionPerformed(ActionEvent e) {
 								ordenPedido.eliminarProducto(producto);
 //								System.out.println(add.getProducto().toString());
-								int pedidoClave = 12412441;
 				                String ticket = ordenPedido.generarTicket();
 				                String informacion=("Clave: " + pedidoClave + "\n\nTicket: " + ticket);
 				                int maxLength = 45; // Longitud máxima para cada subcadena
@@ -462,7 +473,8 @@ public class Ventana {
 				                    labelTicket.setBounds(450, 100 + (i * 20), 500, 20);
 				                    labelTicket.setOpaque(true);
 				                    labelTicket.setBackground(Color.WHITE);
-				                    Crearpedido.add(labelTicket);}
+				                    panelTicket.add(labelTicket);
+				                    panelTicket.repaint();}
 								
 							}});
 		                
@@ -476,7 +488,6 @@ public class Ventana {
 							            Connection conexion = conectar();
 							            String query = "INSERT INTO pedidos (clave, ticket) VALUES (?, ?)";
 							            PreparedStatement statement = (PreparedStatement) conexion.prepareStatement(query);
-										int pedidoClave = new Random().nextInt(10000000);
 
 							            
 							            statement.setInt(1, pedidoClave);
@@ -1328,8 +1339,6 @@ public class Ventana {
 		tagProveedor3.setLocation(229, 36);
 		Crearempleado.add(tagProveedor3);
 		
-		
-		
 		//// LOGOS DEL SUPER
 		JLabel tagCodigo = new JLabel("Ingrese su Direccion: ");
 		tagCodigo.setBounds(300, 345, 358, 18);
@@ -1779,7 +1788,20 @@ public class Ventana {
 		Crearproducto.add(tagProducto);
 		tagProducto.setFont(new Font("comic sans", Font.BOLD, 15));
 		tagProducto.setForeground(Color.white);
-
+		
+		
+		
+		JLabel tagPrecio = new JLabel("Ingrese El Precio Del Producto:");
+		tagPrecio.setBounds(360+200, 125+100, 393, 20);
+		Crearproducto.add(tagPrecio);
+		tagPrecio.setFont(new Font("comic sans", Font.BOLD, 15));
+		tagPrecio.setForeground(Color.white);
+		JTextField tfPrecio = new JTextField();
+		tfPrecio.setBounds(360+200, 160+100, 210, 31);
+		Crearproducto.add(tfPrecio);
+		
+		
+		
 		JTextField tfProveedor = new JTextField();
 		tfProveedor.setBounds(300, 223, 210, 26);
 		Crearproducto.add(tfProveedor);
@@ -1824,7 +1846,11 @@ public class Ventana {
 		            Connection conexion = conectar();
 		            String code = tfCodigo.getText();String dat= tfFecha.getText();
 		            double cod=Integer.parseInt(code);int datee = Integer.parseInt(dat);
-		            Producto producto = new Producto(cod,"producto general",tfNombre.getText(),datee,tfProveedor.getText(),300.40);
+		            
+		            String stringValue = tfPrecio.getText();
+		            double doubleValue = Double.parseDouble(stringValue);
+		            
+		            Producto producto = new Producto(cod,"producto general",tfNombre.getText(),datee,tfProveedor.getText(),doubleValue);
 		            
 		            String query = "INSERT INTO productos (Codigo, Tipo, Nombre, Fecha_caducidad, Proveedor,Precio) VALUES (?, ?, ?, ?, ?, ?)";
 		            PreparedStatement preparedStatement = (PreparedStatement) conexion.prepareStatement(query);

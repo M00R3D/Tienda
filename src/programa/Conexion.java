@@ -6,7 +6,7 @@ public class Conexion {
     private static final String CONTROLADOR = "com.mysql.jdbc.Driver";
     private static final String URL = "jdbc:mysql://localhost:3306/pruebita";
     private static final String USUARIO = "root";
-    private static final String CLAVE = "";
+    private static final String CLAVE = "0312";
     public Connection conectar() {
         Connection conexion = null;
         try {
