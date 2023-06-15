@@ -1833,7 +1833,7 @@ public class Ventana {
 		cancelar.setBackground(Color.decode("#BF110B"));
 		Crearproducto.add(cancelar);
 
-		JButton jbnAccess = new JButton("ACCEDER");
+		JButton jbnAccess = new JButton("Guardar");
 		jbnAccess.setSize(122, 60);
 		jbnAccess.setLocation(420, 424);
 		jbnAccess.setForeground(Color.decode("#FFFFFF"));
@@ -1946,7 +1946,7 @@ public class Ventana {
 		Crearproducto.add(im12);
 		ImageIcon imgRegresar = new ImageIcon("regresar.png");
 		JButton regresar = new JButton(imgRegresar);
-		JLabel IngreseNombre = new JLabel("Ingrese el nombre del empleado a Eliminar: ");
+		JLabel IngreseNombre = new JLabel("Ingrese el nombre del producto a Eliminar: ");
 		IngreseNombre.setBounds(300, 120, 358, 18);
 		IngreseNombre.setFont(new Font("Arial", Font.BOLD, 15));
 		IngreseNombre.setForeground(Color.white);
